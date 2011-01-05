@@ -1,0 +1,4 @@
+h1. Editor
+
+* Configure editor to use _Soft Tabs_ (replace tabs with spaces) or Spaces
+* A Tab should be equivalent to 2 spaces
