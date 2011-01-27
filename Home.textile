@@ -11,10 +11,7 @@ h3. Rails
 h3. Gems
 
 * [[ActiveRecord]]
-
-h3. Testing
-
-* RSpec
+* [[RSpec]]
 
 
 h2. RubyGarden old references
