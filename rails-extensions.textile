@@ -8,26 +8,38 @@ h2. Convention
 
 The following convention solves the problem attempting to respect the purpose of each Rails folder.
 
-Create the following initializer and save it in the `/config/initializers/` folder with the name `_extruby.rb`. The name SHOULD be prefixed with a `_`, in this way Rails will load this file before all the other initializers in the same folder.
+Create an initializer with the following content and save it in the `/config/initializers/` folder. The file name MUST be `_extruby.rb` The name SHOULD be prefixed with a `_`, in this way Rails will load this file before all the other initializers in the same folder.
 
 ```ruby
 Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| require f }
 ```
 
-Create the folder `/lib/extruby` which will contain all the extensions. To better organize the files, you SHOULD the following folder structure:
+Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`. To better organize the files, you SHOULD organize the extensions according to the following folder structure:
 
 # TODO: explain structure
 
 ```
 lib/extruby/
 ├── gem
-│   └── postageapp-actionmailer
-│       └── postage.rb
+│   ├── mail
+│   │   ├── mail-address.rb
+│   │   └── mail-clone.rb
+│   ├── money
+│   │   └── money-rails.rb
+│   ├── postageapp
+│   │   └── postage-actionmailer.rb
+│   ├── public_suffix_service
+│   │   └── public_suffix_service-domain.rb
+│   └── whois
+│       ├── super_struct.rb
+│       └── whois-elabtime.rb
 ├── rails
-│   └── ....rb
+│   └── active_record
+│       └── active_record-sqllike.rb
 └── ruby
-    ├── array-sorting.rb
-    └── string-conversions.rb
+    └── core
+        ├── object-delayed-job.rb
+        └── object-yielding.rb
 ```
 
 Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (`Test::Unit`, `Shoulda`) you SHOULD create a corresponding test suite for any customization.
@@ -35,12 +47,18 @@ Remember that Ruby extensions MUST be tested as any other method. Depending on y
 # TODO: update structure
 
 ```
-spec/lib/extruby
+spec/lib/extruby/
+├── gem
+│   ├── mail
+│   │   └── mail-address_spec.rb
+│   ├── money
+│   │   └── money-rails_spec.rb
+│   └── whois
+│       └── super_struct_spec.rb
 └── ruby
-    ├── mail_spec.rb
-    ├── money_spec.rb
-    ├── object_spec.rb
-    └── super_struct_spec.rb
+    └── core
+        └── object-yielding_spec.rb
+
 ```
 
 h2. Considerations
