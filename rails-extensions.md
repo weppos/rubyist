@@ -24,7 +24,7 @@ Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| requi
 
 Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`. To better organize the files, you SHOULD organize the extensions according to the following folder structure:
 
-# TODO: explain structure
+ # TODO: explain structure
 
 ```
 lib/extruby/
@@ -52,7 +52,7 @@ lib/extruby/
 
 Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (`Test::Unit`, `Shoulda`) you SHOULD create a corresponding test suite for any customization.
 
-# TODO: update structure
+ # TODO: update structure
 
 ```
 spec/lib/extruby/
