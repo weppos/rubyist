@@ -1,10 +1,10 @@
-h1. Rails: Ruby and Framework Extensions
+# Rails: Ruby and Framework Extensions
 
 Sometimes you need to -monkeypatch- extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
 
 The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your -hack- customization even less elegant.
 
-h2. Convention
+## Convention
 
 The following convention solves the problem attempting to respect the purpose of each Rails folder.
 
@@ -61,18 +61,21 @@ spec/lib/extruby/
 
 ```
 
-h2. Considerations
+## Considerations
 
 The solution presented above attempts to respect the purpose of each Rails folder.
 
-# It uses an initializer, so that the extensions are loaded when the Rails framework is loaded. However, the extensions are not stored in the initializers folder to avoid cluttering the namespace.
-# It prefixes the initializer with _ causing the initializer to be loaded before any initializer, making the extensions available as soon as possible.
-# It uses a dedicated folder in the `lib` folder to store all the _library_ extensions.
+1. It uses an initializer, so that the extensions are loaded when the Rails framework is loaded. However, the extensions are not stored in the initializers folder to avoid cluttering the namespace.
+1. It prefixes the initializer with _ causing the initializer to be loaded before any initializer, making the extensions available as soon as possible.
+1. It uses a dedicated folder in the `lib` folder to store all the _library_ extensions.
 
-h4. WARNING:
+#### WARNING:
 
 Thought Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changin existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
 
 If you decide to add a new method, make sure you are using an unique name. Otherwise, if you are using a Gem which defines a method with the same name, something might not work as expected.
 
-Be careful when you modify existing classes. Consider using "Inheritance":http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming) or "Composition":http://en.wikipedia.org/wiki/Object_composition.
+Be careful when you modify existing classes. Consider using [Inheritance][1] or [Composition][2].
+
+  [1]: http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)
+  [2]: http://en.wikipedia.org/wiki/Object_composition
