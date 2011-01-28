@@ -5,24 +5,132 @@ h2. YAML File Structure
 ```yaml
 LANGUAGE:
 
+  # The `app` node contains keys related to the main application.
   app:
     site_name: ...
     site_description: ...
     site_headline: ...
 
-  section:
-    ...
-    ...
 
+  # The `flash` node contains all flash message keys,
+  # regardless the flash type.
+  #
+  # Tip: avoid prefixing flash keys with the type of the flash
+  # because the same message can be reused in different flash types.
+  # Also, you might want to change the flash level in the future.
   flash:
-    ...
+    article_created: "The article has been successfully created."
+    article_updated: "The article has been successfully updated."
+    bookmark_created: "The bookmark has been successfully created."
     ...
 
+
+  # The `text` node contains shared keys.
   text:
-    ...
-    ...
+
+    # Action keys are prefixed with `action_`.
+    #
+    #   <a href="#"><%= t("text.action_edit") %></a> or
+    #   <a href="#"><%= t("text.action_cancel") %></a>
+    #
+    action_edit: "edit"
+    action_cancel: "cancel"
+
+    # Button keys are prefixed with `action_`.
+    #
+    #   <%= submit_tag t("text.button_login") %> or
+    #   <a href="#"><%= t("text.action_cancel") %></a>
+    #
+    button_login: "Login"
+    button_search: "Search"
+
+    # h1, h2, h3 keys are prefixed with `header_`.
+    #
+    #   <h1><%= t("text.header_admin_settings") %></h1>
+    #
+    header_admin_settings: "Admin Settings"
+    header_content: "Content"
+
+    # Short messages are prefixed with `message_`.
+    #
+    # <% if @users.empty? %>
+    #   <%= message_users_empty %>
+    # <% else %>
+    #   ...
+    # <% end %>
+    #
+    message_users_empty: "There are no users."
+    message_required_user: "You must be logged to perform this action."
+
+    # Use the placeholder `foo` to refernce a variable.
+    suggested_by_foo: "Suggested by {{username}}"
+    published_by_foo: "Published by {{username}}"
+    foo_ago: "{{time}} ago"
+
+    # Use the schema `x_string` to define a key which interpolates a counter.
+    x_comments:
+      one:  "1 comment"
+      other: "{{count}} comments"
+    last_x_users:
+      one:  "Last 1 comment"
+      other: "Last {{count}} comments"
 
 
+  # The ActionMailer keys follows the same ActionController conventions.
+  #
+  # - The main node is the name of the ActionMailer class.
+  # - It contains one node for each email action.
+  #
+  # == Requirements
+  #
+  # ACTION required keys:
+  #
+  # subject - The subject of the email.
+  #
+  # == Example
+  #
+  # user_mailer:
+  #   notification:
+  #     subject: "[{{project}}] New Contact Message"
+  #   welcome_message:
+  #     subject: "Welcome to {{project}}!"
+  #
+  MAILER:
+    ACTION:
+      subject: "[{{project}}] New Contact Message"
+      ...
+    ACTION:
+      subject: "Welcome to {{project}}!"
+      ...
+
+
+  # The ActionController keys follows Rails convention to have one main node
+  # corresponding to the controller name, including several nodes,
+  # one for each controller action.
+  #
+  # Following this convention will allow you to use the shortcut
+  #
+  #   t(".meta_description")
+  #
+  # instead of
+  #
+  #   t("users_controller.index.meta_description")
+  #
+  # == Requirements
+  #
+  # ACTION required keys:
+  #
+  # title - The content of the <title> tag
+  # meta_description - The content of the meta description tag.
+  #
+  # == Example
+  #
+  # users_controller:
+  #   index:
+  #     ...
+  #   show:
+  #     ...
+  #
   CONTROLLER:
     ACTION:
       title: ...
