@@ -8,6 +8,7 @@ h3. Rails
 
 * [[Design]]
 * [[I18n]]
+* [[Extensions|rails-extensions]]
 
 h3. Gems
 
