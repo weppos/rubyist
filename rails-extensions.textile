@@ -1,3 +1,3 @@
-h1. Rails > Ruby & Framework Extensions
+h1. Rails: Ruby and Framework Extensions
 
 
