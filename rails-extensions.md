@@ -1,8 +1,8 @@
 # Rails: Ruby and Framework Extensions
 
-Sometimes you need to -monkeypatch- extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
+Sometimes you need to <strike>monkeypatch</strike> extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
 
-The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your -hack- customization even less elegant.
+The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your <strike>hack</strike> customization even less elegant.
 
 ## Convention
 
