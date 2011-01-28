@@ -7,6 +7,7 @@ h3. Ruby
 h3. Rails
 
 * [[Design]]
+* [[I18n]]
 
 h3. Gems
 
