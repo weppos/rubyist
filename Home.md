@@ -1,23 +1,23 @@
-h2. Sitemap
+## Sitemap
 
-h3. Ruby
+### Ruby
 
 * [[Editor]]
 * [[Documentation]]
 
-h3. Rails
+### Rails
 
 * [[Design]]
 * [[I18n]]
 * [[Extensions|rails-extensions]]
 
-h3. Gems
+### Gems
 
 * [[ActiveRecord]]
 * [[RSpec]]
 
 
-h2. RubyGarden old references
+## RubyGarden old references
 
 * http://web.archive.org/web/*/http://www.rubygarden.org
 * http://wiki.apache.org/lucy/LucyStyleGuide
