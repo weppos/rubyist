@@ -1,6 +1,6 @@
 # Editor Conventions
 
-## Indentation
+## Indentation
 
 Indentation MUST consist of 2 spaces. Tabs are not allowed.
 
