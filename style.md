@@ -10,7 +10,7 @@ Some rules of thumb when using unless:
 * Avoid negation. "Unless" is already negative. Piling more on only makes it worse.
 * Never, ever, ever use an `else` clause with an `unless` statement.
 
-##### Good Examples
+###### Good Examples
 
 ```ruby
 i += 1 unless i > 10
@@ -20,7 +20,7 @@ unless person.present?
 end
 ```
 
-##### Bad Examples
+###### Bad Examples
 
 ```ruby
 unless !person.present? && !company.present?
