@@ -160,8 +160,8 @@ where parentheses would seem strange, it's rarely a mistake to add them.
 
 _Inspired by Dave Thomas on RubyGardens.org._
 
- #TODO:
+### Method Visibility
 
-* Visibility
+ #TODO
 
   [1]: http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless
