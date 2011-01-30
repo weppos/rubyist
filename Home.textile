@@ -3,6 +3,7 @@ h2. Sitemap
 h3. Ruby
 
 * [[Editor]]
+* [[Documentation]]
 
 h3. Rails
 
