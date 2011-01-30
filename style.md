@@ -4,13 +4,9 @@ Coding style and development conventions.
 
 ## Naming Conventions
 
-The following conventions are constraints set by the Ruby language.
-
 ### Constants
 
 Constants MUST use `UPPER_CASE`.
-
-##### Examples
 
 ```ruby
 Math::PI
@@ -21,11 +17,9 @@ class Curses
 end
 ```
 
-### Classes & Modules
+### Classes and Modules
 
 Classes MUST use `PascalCase`. Join words of class names by capitalizing the first letter of each word. The same goes for `ModuleNames` as well.
-
-##### Examples
 
 ```ruby
 class MyClass
@@ -35,11 +29,9 @@ module MyModule
 end
 ```
 
-### Methods & Variables
+### Methods and Variables
 
 Methods MUST use `underscore`, as do `local_variables`, `@instance_variables`, and `@@class_variables`. Join words with underscores (aka `snake_case`).
-
-##### Examples
 
 ```ruby
 class Greeter
@@ -56,13 +48,12 @@ class Greeter
 end
 ```
 
-### Acronyms
-
 Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
 
-### camelCase
+### Warning
 
 There is no place in Ruby where `camelCase` is ever used.
+
 
 ## Operators
 
