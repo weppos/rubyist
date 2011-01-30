@@ -64,7 +64,59 @@ end
 
 ## Methods
 
-### Don't put spaces between a method name and its parameter list
+# Method Definition
+
+Methods MUST be named according to [[method naming conventions|naming]].
+
+Method definition MUST always include parenthesis when the method has one or more parameters. Avoid parenthesis when the method definition has zero parameters.
+
+```ruby
+def method_with_zero_parameters
+end
+
+def method_with_one_parameter(param1)
+end
+
+def method_with_many_parameters(param1, param2, param3)
+end
+````
+
+Never leave a space between the end of the method name and an open parenthesis, and between the parameter and a parenthesis. Butt the parameter list up tight against the name of the method.
+
+```ruby
+# good
+def method(param1, param2, param3)
+end
+
+# bad
+def method (param1, param2, param3)
+end
+
+# bad
+def method( param1, param2, param3 )
+end
+````
+
+Parameters MUST be separated by a single trailing space after the comma delimiter.
+
+
+```ruby
+# good
+def method(param1, param2, param3)
+end
+
+# bad
+def method(param1,param2,param3)
+end
+
+# bad
+def method(param1,param2,   options)
+end
+````
+
+### Method invocation
+
+Don't put spaces between a method name and its parameter list.
 
 Make the precedence rules clearer: never leave a space between the end of the method invocation and an open parenthesis. Butt the parameter list up tight against the name of the method.
 
@@ -90,10 +142,8 @@ The same applies to method definition
     def say( message = "hello )
     end
 
-_Suggested by Dave Thomas on RubyGardens.org._
 
-
-### Put parentheses around non-trivial parameter lists
+Put parentheses around non-trivial parameter lists.
 
 If you have a method parameter that involves any degree of complexity or that starts with a parenthesized expression, put the whole parameter list in parentheses.
 
@@ -104,16 +154,10 @@ This can be a cause of some pretty subtle bugs, so it's worth getting into the h
 
 where parentheses would seem strange, it's rarely a mistake to add them.
 
-Precendence rules sometimes make it difficult to understand why a method call gives the answer it does. For example, the following came up in RubyTalk:12899.
+_Inspired by Dave Thomas on RubyGardens.org._
 
-    p(2.4/0.2).to_i    # -> 12.0
-    p((2.4/0.2).to_i)  # -> 11
+ #TODO:
 
-A poster wanted to know why (x) != x.
-
-Of course what's really happening is that Ruby is treating the parenthesis after the `p` as the start of a parameter list. The matching closing parenthesis then closes the parameter list, and anything that follows it gets applied to the result of the function.
-
-_Suggested by Dave Thomas on RubyGardens.org._
-
+* Visibility
 
   [1]: http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless
