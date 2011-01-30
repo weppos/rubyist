@@ -2,6 +2,73 @@
 
 Coding style and development conventions.
 
+## Naming Conventions
+
+The following conventions are constraints set by the Ruby language.
+
+### Constants
+
+Constants MUST use `UPPER_CASE`.
+
+##### Examples
+
+```ruby
+Math::PI
+OptionParser::REQUIRED_ARGUMENT
+
+class Curses
+  KEY_DOWN = nil
+end
+```
+
+### Classes & Modules
+
+Classes MUST use `PascalCase`. Join words of class names by capitalizing the first letter of each word. The same goes for `ModuleNames` as well.
+
+##### Examples
+
+```ruby
+class MyClass
+end
+
+module MyModule
+end
+```
+
+### Methods & Variables
+
+Methods MUST use `underscore`, as do `local_variables`, `@instance_variables`, and `@@class_variables`. Join words with underscores (aka `snake_case`).
+
+##### Examples
+
+```ruby
+class Greeter
+  @@hello = nil
+  @@hello_message = nil
+
+  def hello
+    @hello = nil
+  end
+
+  def say_hello
+    @say_hello = nil
+  end
+end
+```
+
+### Acronyms
+
+Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
+
+##### Examples
+
+```ruby
+```
+
+### Forbidden
+
+There is no place in Ruby where `camelCase` is ever used.
+
 ## Operators
 
 ### Making sense with Ruby's "unless" 
@@ -12,7 +79,7 @@ Some rules of thumb when using unless:
 * Avoid negation. "Unless" is already negative. Piling more on only makes it worse.
 * Never, ever, ever use an `else` clause with an `unless` statement.
 
-**Good Examples**
+##### Good Examples
 
 ```ruby
 i += 1 unless i > 10
@@ -22,7 +89,7 @@ unless person.present?
 end
 ```
 
-**Bad Examples**
+##### Bad Examples
 
 ```ruby
 unless !person.present? && !company.present?
