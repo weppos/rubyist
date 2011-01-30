@@ -46,6 +46,6 @@ end
 
 Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
 
-## Important
+---
 
-There is no place in Ruby where `camelCase` is ever used.
+Warning: There is no place in Ruby where `camelCase` is ever used.
