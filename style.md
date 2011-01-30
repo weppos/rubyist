@@ -1,4 +1,3 @@
-
 # Coding Style
 
 ## Operators
@@ -80,7 +79,7 @@ end
 
 def method_with_many_parameters(param1, param2, param3)
 end
-````
+```
 
 Never leave a space between the end of the method name and an open parenthesis, and between the parameter and a parenthesis. Butt the parameter list up tight against the name of the method.
 
@@ -96,10 +95,9 @@ end
 # bad
 def method( param1, param2, param3 )
 end
-````
+```
 
 Parameters MUST be separated by a single trailing space after the comma delimiter.
-
 
 ```ruby
 # good
