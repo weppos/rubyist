@@ -2,7 +2,8 @@
 
 ### Ruby
 
-* [[Editor]]
+* [[Editor Conventions|editor]]
+* [[Naming Conventions|naming]]
 * [[Documentation]]
 * [[Style]]
 
