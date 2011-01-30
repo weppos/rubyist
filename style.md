@@ -1,7 +1,9 @@
+# Coding Style
+
 Coding style and development conventions.
 
-## Operators
-ddd
+## Operators
+
 ### Making sense with Ruby's "unless" 
 
 Some rules of thumb when using unless:
