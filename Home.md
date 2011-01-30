@@ -10,6 +10,7 @@
 * [[Design]]
 * [[I18n]]
 * [[Extensions|rails-extensions]]
+* [[Documentation]]
 
 ### Gems
 
