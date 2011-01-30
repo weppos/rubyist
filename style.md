@@ -60,12 +60,6 @@ end
 
 Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
 
-##### Examples
-
-```ruby
-
-```
-
 ### camelCase
 
 There is no place in Ruby where `camelCase` is ever used.
