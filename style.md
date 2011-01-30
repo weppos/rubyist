@@ -63,9 +63,10 @@ Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variab
 ##### Examples
 
 ```ruby
+
 ```
 
-### Forbidden
+### camelCase
 
 There is no place in Ruby where `camelCase` is ever used.
 
