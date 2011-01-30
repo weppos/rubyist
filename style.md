@@ -1,3 +1,4 @@
+
 # Coding Style
 
 ## Operators
@@ -10,7 +11,7 @@ Some rules of thumb when using unless:
 * Avoid negation. "Unless" is already negative. Piling more on only makes it worse.
 * Never, ever, ever use an `else` clause with an `unless` statement.
 
-###### Good Examples
+###### Good example
 
 ```ruby
 i += 1 unless i > 10
@@ -20,7 +21,7 @@ unless person.present?
 end
 ```
 
-###### Bad Examples
+###### Bad example
 
 ```ruby
 unless !person.present? && !company.present?
@@ -30,7 +31,7 @@ else
 end
 ```
 
-Inspired by [37signals][1].
+_Inspired by [37signals][1]_.
 
 
 ## Blocks
@@ -64,7 +65,7 @@ end
 
 ## Methods
 
-# Method Definition
+### Method Definition
 
 Methods MUST be named according to [[method naming conventions|naming]].
 
@@ -112,36 +113,41 @@ end
 # bad
 def method(param1,param2,   options)
 end
-````
+```
 
-### Method invocation
+### Method Invocation
 
 Don't put spaces between a method name and its parameter list.
 
 Make the precedence rules clearer: never leave a space between the end of the method invocation and an open parenthesis. Butt the parameter list up tight against the name of the method.
 
-    # parses visually the same way Ruby parses it
-    Math.sqrt(2 + 2) * 3 
+```ruby
+# parses visually the same way Ruby parses it
+Math.sqrt(2 + 2) * 3 
+```
 
 but
 
-    # is confusing
-    Math.sqrt (2 + 2) * 3
+```ruby
+# is confusing
+Math.sqrt (2 + 2) * 3
+```
 
 The same applies to method definition
 
-    # good version
-    def say(message = "hello)
-    end
+```ruby
+# good version
+def say(message = "hello)
+end
 
-    # bad version
-    def say (message = "hello)
-    end
+# bad version
+def say (message = "hello)
+end
 
-    # bad version
-    def say( message = "hello )
-    end
-
+# bad version
+def say( message = "hello )
+end
+```
 
 Put parentheses around non-trivial parameter lists.
 
