@@ -4,6 +4,7 @@
 
 * [[Editor]]
 * [[Documentation]]
+* [[Style]]
 
 ### Rails
 
