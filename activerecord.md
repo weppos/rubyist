@@ -1,6 +1,6 @@
 # ActiveRecord
 
-## Model Definition Order
+## Model Definition Order
 
 ```ruby
 class Model
