@@ -4,8 +4,8 @@
 
 * [[Editor Conventions|editor]]
 * [[Naming Conventions|naming]]
+* [[Coding Style|style]]
 * [[Documentation]]
-* [[Style]]
 
 ### Rails
 
