@@ -135,7 +135,7 @@ The same applies to method definition
 
 ```ruby
 # good version
-def say(message = "hello)
+def say(message = "hello")
 end
 
 # bad version
