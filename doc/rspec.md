@@ -1,37 +1,5 @@
 # RSpec
 
-## Gem specific documentation
-
-* [RSpec 2][1]
-* [Factory girl][2]
-* [Shoulda][3]
-* [Autotest][4]
-
-  [1]: http://relishapp.com/rspec/rspec-rails
-  [2]: http://rdoc.info/github/thoughtbot/factory_girl
-  [3]: http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/frames
-  [4]: http://ph7spot.com/musings/getting-started-with-autotest
-  [5]: https://github.com/jtrupiano/timecop
-  [6]: https://github.com/bblimke/webmock
-  [7]: http://jeffkreeftmeijer.com/2010/fuubar-the-instafailing-rspec-progress-bar-formatter/
-
-
-## Literatures
-
-* [The RSpec Book][11]
-* [Rails Test Prescriptions][12]
-* [Eggs on bread best practices][13]
-* [Carbon Five best practices][14]
-* [Dmytro best practices][15]
-* [Andy Vanasse best practices][16]
-
-  [11]: http://pragprog.com/titles/nrtest/rails-test-prescriptions
-  [12]: http://pragprog.com/titles/nrtest/rails-test-prescriptions
-  [13]: http://eggsonbread.com/2010/03/28/my-rspec-best-practices-and-tips/
-  [14]: http://blog.carbonfive.com/2010/10/21/rspec-best-practices/
-  [15]: http://kpumuk.info/ruby-on-rails/my-top-7-rspec-best-practices/
-  [16]: http://blog.andyvanasse.com/post/503615383/rspec-best-practices
-
 ## The Rules
 
 RSpec is a great tool in the behavior driven design process of writing
@@ -207,24 +175,23 @@ This is an old topic, but it's still good to remember. Do not use
 fixture which are difficult to control and use [factories][2]. Use them
 to reduce the verbosity on creating new data.
 
-NOTE: The [Rails Test prescriptions][12] book face this problem in deep,
-so read it if you want to know more about. It also discuss on why you
-should not use fixtures, in favour of factories.
+    # wrong
+    user = User.create( :name => "Genoveffa",
+                        :surname => "Piccolina",
+                        :city => "Billyville",
+                        :birth => "17 Agoust 1982",
+                        :active => true)
 
-  # wrong
-  user = User.create( :name => "Genoveffa",
-                      :surname => "Piccolina",
-                      :city => "Billyville",
-                      :birth => "17 Agoust 1982",
-                      :active => true)
-
-  # correct
-  user = Factory.create(:user)
+    # correct
+    user = Factory.create(:user)
 
 When defining a [factory][2], start from a base valid one, which you can easily
-extend later on, into the code.
+extend later on, into the code. If intereste, the [Rails Test prescriptions][12]
+book face this problem in deep. It also discuss on why you should not use fixtures
+in favour of factories.
 
-# create a do\_action method
+
+### create a do\_action method
 
 While testing rails controllers, I encountered a common pattern on
 calling the actions. The code I was gettign through was something like
@@ -273,3 +240,38 @@ method which you can use in all of your tests.
   be available all the time and that you want to personalize.
 * Use a good looking formatter to check if your test passed or failed. I
   use [fuubar][7], which to me looks perfect.
+
+
+## Literatures
+
+* [The RSpec Book][11]
+* [Rails Test Prescriptions][12]
+* [Eggs on bread best practices][13]
+* [Carbon Five best practices][14]
+* [Dmytro best practices][15]
+* [Andy Vanasse best practices][16]
+
+  [11]: http://pragprog.com/titles/nrtest/rails-test-prescriptions
+  [12]: http://pragprog.com/titles/nrtest/rails-test-prescriptions
+  [13]: http://eggsonbread.com/2010/03/28/my-rspec-best-practices-and-tips/
+  [14]: http://blog.carbonfive.com/2010/10/21/rspec-best-practices/
+  [15]: http://kpumuk.info/ruby-on-rails/my-top-7-rspec-best-practices/
+  [16]: http://blog.andyvanasse.com/post/503615383/rspec-best-practices
+
+
+## LibrariesLibraries
+
+* [RSpec 2][1]
+* [Factory girl][2]
+* [Shoulda][3]
+* [Autotest][4]
+
+  [1]: http://relishapp.com/rspec/rspec-rails
+  [2]: http://rdoc.info/github/thoughtbot/factory_girl
+  [3]: http://rubydoc.info/github/thoughtbot/shoulda-matchers/master/frames
+  [4]: http://ph7spot.com/musings/getting-started-with-autotest
+  [5]: https://github.com/jtrupiano/timecop
+  [6]: https://github.com/bblimke/webmock
+  [7]: http://jeffkreeftmeijer.com/2010/fuubar-the-instafailing-rspec-progress-bar-formatter/
+
+
