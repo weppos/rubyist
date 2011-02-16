@@ -14,16 +14,11 @@ methods and "#" as prefix for instance methods
 
       # wrong
       describe "the authenticate method for User" do
-        ...
-      descrive "if the user is an admin" do
-        ...
-
+      describe "if the user is an admin" do
 
       # correct
       describe '.authenticate' do
-        ...
       describe "#admin?"
-        ...
 
 ### Overuse context and use 'when'/'with' as keys
 
@@ -33,18 +28,18 @@ In the long time this way to act will keep tests easy to read
       # wrong
       it "should have 200 stauts code if logged in" do
         it { should respond_with 200 }
-        ...
+      end
       it "should have 401 stauts code if not logged in" do
         it { should respond_with 401 }
-
+      end
 
       # correct
       context "when logged in" do
         it { should respond_with 200 }
-        ...
+      end
       context "when logged out" do
         it { should respond_with 401 }
-        ...
+      end
 
 ### Keep your descriptions short
 
@@ -54,7 +49,6 @@ allowed)
 
       # wrong
       it "should have 422 status code if an unexpected param wants to be added" do
-      ...
 
       # correct
       context "when not valid"
@@ -82,14 +76,11 @@ mean single line test.
         it "should create a resource" do
           response.should respond_with_content_type(:json)
           response.should assign_to(:resource
-          ...
         end
-
 
       # correct
         it { should respond_with_content_type(:json) }
         it { should assign_to(:resource) }
-        ...
 
 ### Test valid, edge and invalid cases
 
@@ -132,7 +123,7 @@ the `subject{}` method to dry them up.
       it { assigns("message").should match /it has born in Billyville/ }
       it { assigns("message").creator.should match /Claudiano/ }
 
-      # right
+      # ccorrect
       subject { assigns("message") }
       it { should match /The resource name is Genoveffa/ }
       it { should match /it has born in Genopellopoli/ }
