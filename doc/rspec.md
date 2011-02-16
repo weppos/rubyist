@@ -18,7 +18,7 @@ methods and "#" as prefix for instance methods
 
       # correct
       describe '.authenticate' do
-      describe "#admin?"
+      describe "#admin?" do
 
 ### Overuse context and use 'when'/'with' as keys
 
@@ -251,7 +251,7 @@ method which you can use in all of your tests.
   [16]: http://blog.andyvanasse.com/post/503615383/rspec-best-practices
 
 
-## LibrariesLibraries
+## Libraries
 
 * [RSpec 2][1]
 * [Factory girl][2]
