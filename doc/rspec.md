@@ -12,17 +12,17 @@ resources and from our experience.
 Keep clear the methods you are describing using "." as prefix for class
 methods and "#" as prefix for instance methods
 
-  # wrong
-  describe "the authenticate method for User" do
-    ...
-  descrive "if the user is an admin" do
-    ...
+        # wrong
+        describe "the authenticate method for User" do
+          ...
+        descrive "if the user is an admin" do
+          ...
 
-  # correct
-  describe '.authenticate' do
-    ...
-  describe "#admin?"
-    ...
+        # correct
+        describe '.authenticate' do
+          ...
+        describe "#admin?"
+          ...
 
 ### Overuse context and use 'when'/'with' as keys
 
