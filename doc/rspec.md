@@ -257,6 +257,9 @@ method which you can use in all of your tests.
 * [Factory girl][2]
 * [Shoulda][3]
 * [Autotest][4]
+* [Timecop][5]
+* [Webmock][6]
+* [Fuubar][7]
 
   [1]: http://relishapp.com/rspec/rspec-rails
   [2]: http://rdoc.info/github/thoughtbot/factory_girl
