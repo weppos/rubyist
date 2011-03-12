@@ -43,8 +43,17 @@ class Model
   named_scope   :one, lambda { }
   named_scope   :two, :conditions => ""
 
+  # Business Logic
+  def public_method_a
+  end
+
+  protected
+    def protected_method
+    end
 
   private
+    def private_method
+    end
 
 end
 ```
