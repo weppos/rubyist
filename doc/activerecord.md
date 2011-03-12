@@ -37,7 +37,7 @@ class Model
   after_update  :method
 
   # Validations
-  validates_presence_of :attribute
+  validates :attribute, :presence => true
 
   # Named scopes
   named_scope   :one, lambda { }
