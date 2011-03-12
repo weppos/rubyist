@@ -36,14 +36,15 @@ class Model
   before_update :method
   after_update  :method
 
+  # Validations
+  validates_presence_of :attribute
+
   # Named scopes
   named_scope   :one, lambda { }
   named_scope   :two, :conditions => ""
 
 
   private
-
-    validates_presence_of :attribute
 
 end
 ```
