@@ -1,6 +1,8 @@
 # Coding Style
 
+
 ## Operators
+
 
 ### Making sense with Ruby's "unless" 
 
@@ -12,28 +14,25 @@ Some rules of thumb when using unless:
 
 ###### Good example
 
-```ruby
-i += 1 unless i > 10
+    i += 1 unless i > 10
 
-unless person.present?
-  puts "There's no such person" 
-end
-```
+    unless person.present?
+      puts "There's no such person" 
+    end
 
 ###### Bad example
 
-```ruby
-unless !person.present? && !company.present?
-  puts "do you even know what you're doing?" 
-else
-  puts "and now we're really confused" 
-end
-```
+    unless !person.present? && !company.present?
+      puts "do you even know what you're doing?" 
+    else
+      puts "and now we're really confused" 
+    end
 
 _Inspired by [37signals][1]_.
 
 
 ## Blocks
+
 
 ### { ... } blocks versus do ... end blocks
 
@@ -46,23 +45,23 @@ The latter convention seems to be gaining in popularity, but there does not seem
 
 Note: The two block notations have different precedence, so they are not always interchangeable unless parentheses are used.
 
-```ruby
-class Post < ActiveRecord::Base
+    class Post < ActiveRecord::Base
 
-  # The following statement raises a compile error
-  scope :search_for, lambda { |query|
-    where("1 == 1")
-  }
+      # The following statement raises a compile error
+      scope :search_for, lambda { |query|
+        where("1 == 1")
+      }
 
-  # The following statement works
-  scope :search_for, lambda { |query|
-    where("1 == 1")
-  }
+      # The following statement works
+      scope :search_for, lambda { |query|
+        where("1 == 1")
+      }
 
-end
-```
+    end
+
 
 ## Methods
+
 
 ### Method Definition
 
@@ -70,48 +69,43 @@ Methods MUST be named according to [[method naming conventions|naming]].
 
 Method definition MUST always include parenthesis when the method has one or more parameters. Avoid parenthesis when the method definition has zero parameters.
 
-```ruby
-def method_with_zero_parameters
-end
+    def method_with_zero_parameters
+    end
 
-def method_with_one_parameter(param1)
-end
+    def method_with_one_parameter(param1)
+    end
 
-def method_with_many_parameters(param1, param2, param3)
-end
-```
+    def method_with_many_parameters(param1, param2, param3)
+    end
 
 Never leave a space between the end of the method name and an open parenthesis, and between the parameter and a parenthesis. Butt the parameter list up tight against the name of the method.
 
-```ruby
-# good
-def method(param1, param2, param3)
-end
+    # good
+    def method(param1, param2, param3)
+    end
 
-# bad
-def method (param1, param2, param3)
-end
+    # bad
+    def method (param1, param2, param3)
+    end
 
-# bad
-def method( param1, param2, param3 )
-end
-```
+    # bad
+    def method( param1, param2, param3 )
+    end
 
 Parameters MUST be separated by a single trailing space after the comma delimiter.
 
-```ruby
-# good
-def method(param1, param2, param3)
-end
+    # good
+    def method(param1, param2, param3)
+    end
 
-# bad
-def method(param1,param2,param3)
-end
+    # bad
+    def method(param1,param2,param3)
+    end
 
-# bad
-def method(param1,param2,   options)
-end
-```
+    # bad
+    def method(param1,param2,   options)
+    end
+
 
 ### Method Invocation
 
@@ -119,33 +113,27 @@ Don't put spaces between a method name and its parameter list.
 
 Make the precedence rules clearer: never leave a space between the end of the method invocation and an open parenthesis. Butt the parameter list up tight against the name of the method.
 
-```ruby
-# parses visually the same way Ruby parses it
-Math.sqrt(2 + 2) * 3 
-```
+    # parses visually the same way Ruby parses it
+    Math.sqrt(2 + 2) * 3 
 
 but
 
-```ruby
-# is confusing
-Math.sqrt (2 + 2) * 3
-```
+    # is confusing
+    Math.sqrt (2 + 2) * 3
 
 The same applies to method definition
 
-```ruby
-# good version
-def say(message = "hello")
-end
+    # good version
+    def say(message = "hello")
+    end
 
-# bad version
-def say (message = "hello")
-end
+    # bad version
+    def say (message = "hello")
+    end
 
-# bad version
-def say( message = "hello" )
-end
-```
+    # bad version
+    def say( message = "hello" )
+    end
 
 Put parentheses around non-trivial parameter lists.
 
@@ -160,8 +148,10 @@ where parentheses would seem strange, it's rarely a mistake to add them.
 
 _Inspired by Dave Thomas on RubyGardens.org._
 
+
 ### Method Visibility
 
  #TODO
+
 
   [1]: http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless

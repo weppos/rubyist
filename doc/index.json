@@ -1,0 +1,22 @@
+{
+    "title": "The Rubyist",
+    "langTitle": "The Rubyist in English",
+    "description": "A collection of Ruby coding conventions and standards.",
+    "sections": [
+        {
+            "title": "Intro",
+            "dir": "intro",
+            "articles": []
+        },
+        {
+            "title": "Ruby",
+            "dir": "ruby",
+            "articles": [
+                "editor",
+                "naming",
+                "style",
+                "documentation"
+            ]
+        }
+    ]
+}
