@@ -1,6 +1,6 @@
-# Rails: Extensions
+## Extensions
 
-#### WARNING:
+##### WARNING:
 
 Thought Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changin existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
 
@@ -8,7 +8,8 @@ If you decide to add a new method, make sure you are using an unique name. Other
 
 Be careful when you modify existing classes. Consider using [Inheritance][1] or [Composition][2].
 
-## Ruby, Rails & Gem extensions
+
+### Ruby, Rails & Gem extensions
 
 Sometimes you need to <strike>monkeypatch</strike> extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
 
@@ -18,58 +19,53 @@ The following convention solves the problem attempting to respect the purpose of
 
 Create an initializer with the following content and save it in the `/config/initializers/` folder. The file name MUST be `_extruby.rb` The name SHOULD be prefixed with a `_`, in this way Rails will load this file before all the other initializers in the same folder.
 
-```ruby
-Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| require f }
-```
+
+    Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| require f }
 
 Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`. To better organize the files, you SHOULD organize the extensions according to the following folder structure:
 
  # TODO: explain structure
 
-```
-lib/extruby/
-├── gem
-│   ├── mail
-│   │   ├── mail-address.rb
-│   │   └── mail-clone.rb
-│   ├── money
-│   │   └── money-rails.rb
-│   ├── postageapp
-│   │   └── postage-actionmailer.rb
-│   ├── public_suffix_service
-│   │   └── public_suffix_service-domain.rb
-│   └── whois
-│       ├── super_struct.rb
-│       └── whois-elabtime.rb
-├── rails
-│   └── active_record
-│       └── active_record-sqllike.rb
-└── ruby
-    └── core
-        ├── object-delayed-job.rb
-        └── object-yielding.rb
-```
+    lib/extruby/
+    ├── gem
+    │   ├── mail
+    │   │   ├── mail-address.rb
+    │   │   └── mail-clone.rb
+    │   ├── money
+    │   │   └── money-rails.rb
+    │   ├── postageapp
+    │   │   └── postage-actionmailer.rb
+    │   ├── public_suffix_service
+    │   │   └── public_suffix_service-domain.rb
+    │   └── whois
+    │       ├── super_struct.rb
+    │       └── whois-elabtime.rb
+    ├── rails
+    │   └── active_record
+    │       └── active_record-sqllike.rb
+    └── ruby
+        └── core
+            ├── object-delayed-job.rb
+            └── object-yielding.rb
 
 Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (`Test::Unit`, `Shoulda`) you SHOULD create a corresponding test suite for any customization.
 
  # TODO: update structure
 
-```
-spec/lib/extruby/
-├── gem
-│   ├── mail
-│   │   └── mail-address_spec.rb
-│   ├── money
-│   │   └── money-rails_spec.rb
-│   └── whois
-│       └── super_struct_spec.rb
-└── ruby
-    └── core
-        └── object-yielding_spec.rb
+    spec/lib/extruby/
+    ├── gem
+    │   ├── mail
+    │   │   └── mail-address_spec.rb
+    │   ├── money
+    │   │   └── money-rails_spec.rb
+    │   └── whois
+    │       └── super_struct_spec.rb
+    └── ruby
+        └── core
+            └── object-yielding_spec.rb
 
-```
 
-## Considerations
+##### Considerations
 
 The solution presented above attempts to respect the purpose of each Rails folder.
 

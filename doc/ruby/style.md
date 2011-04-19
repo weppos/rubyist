@@ -12,7 +12,7 @@ Some rules of thumb when using unless:
 * Avoid negation. "Unless" is already negative. Piling more on only makes it worse.
 * Never, ever, ever use an `else` clause with an `unless` statement.
 
-###### Good example
+##### Good example
 
     i += 1 unless i > 10
 
@@ -20,7 +20,7 @@ Some rules of thumb when using unless:
       puts "There's no such person" 
     end
 
-###### Bad example
+##### Bad example
 
     unless !person.present? && !company.present?
       puts "do you even know what you're doing?" 

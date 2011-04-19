@@ -17,6 +17,16 @@
                 "style",
                 "documentation"
             ]
+        },
+        {
+            "title": "Rails",
+            "dir": "rails",
+            "articles": [
+                "design",
+                "i18n",
+                "style",
+                "documentation"
+            ]
         }
     ]
 }
