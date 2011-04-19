@@ -1,7 +1,7 @@
-# Naming Conventions
+## Naming Conventions
 
 
-## Constants
+### Constants
 
 Constants MUST use `UPPER_CASE`.
 
@@ -13,7 +13,7 @@ Constants MUST use `UPPER_CASE`.
     end
 
 
-## Classes and Modules
+### Classes and Modules
 
 Classes MUST use `PascalCase`. Join words of class names by capitalizing the first letter of each word. The same goes for `ModuleNames` as well.
 
@@ -24,7 +24,7 @@ Classes MUST use `PascalCase`. Join words of class names by capitalizing the fir
     end
 
 
-## Methods and Variables
+### Methods and Variables
 
 Methods MUST use `underscore`, as do `local_variables`, `@instance_variables`, and `@@class_variables`. Join words with underscores (aka `snake_case`).
 

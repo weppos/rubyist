@@ -27,6 +27,13 @@
                 "style",
                 "documentation"
             ]
+        },
+        {
+            "title": "ActiveRecord",
+            "dir": "activerecord",
+            "articles": [
+                "activerecord"
+            ]
         }
     ]
 }

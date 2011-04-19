@@ -1,10 +1,9 @@
-# Coding Style
+## Coding Style
 
 
-## Operators
+### Operators
 
-
-### Making sense with Ruby's "unless" 
+#### Making sense with Ruby's "unless" 
 
 Some rules of thumb when using unless:
 
@@ -31,10 +30,9 @@ Some rules of thumb when using unless:
 _Inspired by [37signals][1]_.
 
 
-## Blocks
+### Blocks
 
-
-### { ... } blocks versus do ... end blocks
+#### { ... } blocks versus do ... end blocks
 
 There are two prevailing conventions on when to use curly braces for blocks versus the do ... end keywords:
 
@@ -60,10 +58,9 @@ Note: The two block notations have different precedence, so they are not always 
     end
 
 
-## Methods
+### Methods
 
-
-### Method Definition
+#### Method Definition
 
 Methods MUST be named according to [[method naming conventions|naming]].
 
@@ -107,7 +104,7 @@ Parameters MUST be separated by a single trailing space after the comma delimite
     end
 
 
-### Method Invocation
+#### Method Invocation
 
 Don't put spaces between a method name and its parameter list.
 
@@ -149,7 +146,7 @@ where parentheses would seem strange, it's rarely a mistake to add them.
 _Inspired by Dave Thomas on RubyGardens.org._
 
 
-### Method Visibility
+#### Method Visibility
 
  #TODO
 

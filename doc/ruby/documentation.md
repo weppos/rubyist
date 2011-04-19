@@ -1,7 +1,4 @@
-# Documentation
-
-
-## Documenting Ruby code
+## Documentation
 
 Ruby libraries intended to be distributed or packaged as Gem MUST be documented using [YARD][1].
 
@@ -10,7 +7,7 @@ YARD is a powerful Ruby documentation tool for generating API documentation from
 Compared to RDoc, YARD is able to generate a more detailed API documentation. It also offers some very handy tools, such as `yard server --reload`, that generates and reloads the documentation on-the-fly.
 
 
-## List of Documentation Tools/Formats
+### List of Documentation Tools/Formats
 
 * [RDoc][2]
 * [YARD][1]
