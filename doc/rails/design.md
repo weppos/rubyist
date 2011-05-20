@@ -1,6 +1,5 @@
 ## Design Conventions
 
-
 ### Layout & Page Namespace
 
 Sometimes, CSS definitions apply to one page or all pages in a specific layout. The convention is to scope these definitions under the page namespace or layout namespace.
@@ -35,3 +34,25 @@ For example, to assign the page namespace `page-account` to the `/accounts/index
     <% pagid "account" %>
 
     ... here your HTML view
+
+##### Source Code
+
+Here's the code for the `pagid` helper.
+
+    # Sets/Gets a page id for a view.
+    #
+    # If called with an argument, appends the argument to the existing page id.
+    #
+    #   pagid "page-users"
+    #   # => "page-users"
+    #   pagid
+    #   # => "page-users"
+    #   pagid "hidden"
+    #   # => "page-users hidden"
+    #   pagid
+    #   # => "page-users hidden"
+    #
+    # Returns a String with the current page id.
+    def pagid(*args)
+      (@_pagid ||= []).concat(args).compact.join(" ")
+    end
