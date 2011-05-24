@@ -27,20 +27,20 @@ Create the folder `/lib/extruby` which will contain all the extensions. The name
 
     lib/extruby/
     ├── active_record
-    │   └── active_record-sqllike.rb
+    │   └── sqllike.rb
     ├── mail
-    │   ├── mail-address.rb
-    │   └── mail-clone.rb
+    │   ├── address.rb
+    │   └── clone.rb
     ├── money
     │   └── money-rails.rb
     ├── postageapp
-    │   └── postage-actionmailer.rb
+    │   └── actionmailer.rb
     ├── public_suffix_service
-    │   └── public_suffix_service-domain.rb
+    │   └── domain.rb
     ├── ruby
     │   └── core
-    │       ├── object-delayed-job.rb
-    │       └── object-yielding.rb
+    │       ├── object_delayed_job.rb
+    │       └── object_yielding.rb
     └── whois
         ├── elabtime.rb
         └── super_struct.rb
@@ -51,12 +51,12 @@ Remember that Ruby extensions MUST be tested as any other method. Depending on y
 
     spec/lib/extruby/
     ├── mail
-    │   └── mail-address_spec.rb
+    │   └── address_spec.rb
     ├── money
-    │   └── money-rails_spec.rb
+    │   └── rails_spec.rb
     ├── ruby
     │   └── core
-    │       └── object-yielding_spec.rb
+    │       └── object_yielding_spec.rb
     └── whois
         └── super_struct_spec.rb
 
