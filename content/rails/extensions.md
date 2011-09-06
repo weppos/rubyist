@@ -1,8 +1,8 @@
 ---
-title: Extensions
+title: Extensions / Rails
 ---
 
-# Extensions
+# Rails Extensions
 
 #### WARNING:
 

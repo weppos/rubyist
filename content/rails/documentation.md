@@ -1,8 +1,8 @@
 ---
-title: Documentation
+title: Documentation / Rails
 ---
 
-# Documentation
+# Rails Documentation
 
 Rails code SHOULD be documented using [TomDoc][3].
 

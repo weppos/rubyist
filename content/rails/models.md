@@ -1,8 +1,8 @@
 ---
-title: Models
+title: Models / Rails
 ---
 
-# Models
+# Rails Models
 
 
 ## Model Definition Order

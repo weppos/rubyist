@@ -1,8 +1,8 @@
 ---
-title: Design Conventions
+title: Design Conventions / Rails
 ---
 
-# Design Conventions
+# Rails Design Conventions
 
 
 ## Layout & Page Namespace
