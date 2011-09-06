@@ -11,7 +11,7 @@ metadata.
 
 Whilst YARD does not enforce a particular order, a common convention makes the source code more readable, especially when the documentation block contains more than 5 tags.
 
-Include tags in the following order:
+You SHOULD include tags in the following order:
 
     Description block.
 
@@ -39,13 +39,13 @@ Include tags in the following order:
 
 We employ the following conventions when a tag appears more than once in a documentation block.
 
-* Multiple `@author` tags should be listed in chronological order, with the creator of the class/method listed at the top.
-* Multiple `@param` tags should be listed in argument-declaration order. This makes it easier to visually match the list to the declaration.
-* Multiple `@raise` tags should be listed alphabetically by the exception names.  
+* Multiple `@author` tags SHOULD be listed in chronological order, with the creator of the class/method listed at the top.
+* Multiple `@param` tags SHOULD be listed in argument-declaration order. This makes it easier to visually match the list to the declaration.
+* Multiple `@raise` tags SHOULD be listed alphabetically by the exception names.  
 
 ### Required Tags 
 
-A `@param` tag is "required" (by convention) for every parameter. The description can be omitted if the meaning of the parameter is obvious.
+A `@param` tag is REQUIRED (by convention) for every parameter. The description MAY be omitted if the meaning of the parameter is obvious.
 
     # Opens a socket connection and returns the TCPSocket instance.
     #
@@ -55,7 +55,7 @@ A `@param` tag is "required" (by convention) for every parameter. The descriptio
     def connect(host, port)
     end
 
-The `@return` tag is required for every method that returns something other than void. The description can be omitted if the meaning of the parameter is obvious. Whenever possible, find something non-redundant (ideally, more specific) to use for the tag comment.
+The `@return` tag is REQUIRED for every method that returns something other than void. The description MAY be omitted if the meaning of the parameter is obvious. Whenever possible, you SHOULD find something non-redundant (ideally, more specific) to use for the tag comment.
 
     # Opens a socket connection and returns the TCPSocket instance.
     #
