@@ -1,3 +1,7 @@
+---
+title: Documentation
+---
+
 # Documentation
 
 Ruby libraries intended to be distributed or packaged as Gem MUST be documented using [YARD][1].

@@ -4,6 +4,7 @@ title: Preface
 
 # Preface
 
+
 ## Disclaimer
 
 The Rubyist does **not** aim to teach you programming in Ruby. Also, it does **not** pretend to represent *the* right answer to all the Ruby conventions. Many of the conventions contained in this documentation are largely opinionable and are merely the result of years of Ruby programming and hundreds of lines of code.

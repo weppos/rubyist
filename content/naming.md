@@ -1,3 +1,7 @@
+---
+title: Naming Conventions
+---
+
 # Naming Conventions
 
 

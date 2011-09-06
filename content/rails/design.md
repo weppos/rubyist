@@ -1,4 +1,9 @@
+---
+title: Design Conventions
+---
+
 # Design Conventions
+
 
 ## Layout & Page Namespace
 
