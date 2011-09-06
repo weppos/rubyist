@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- docss -->
+  <link rel="stylesheet" href="/static/shared/css/all.css" type="text/css" media="screen" />
+  <!-- custom -->
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+
+  
+</head>
+
+<body>
+
+  <div id="header" class="container_12 clearfix">
+    <div id="logo" class="grid_6">
+      <a href="/"><em>The</em> Rubyist</a>
+    </div>
+    <div id="menu" class="grid_6">
+      <ul id="nav" class="clearfix">
+      </ul>
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="content" class="container_12 clearfix">
+    <div id="main" class="grid_8">
+      <h1 id="coding-style">Coding Style</h1>
+
+<h2 id="operators">Operators</h2>
+
+<h3 id="making-sense-with-rubys-unless">Making sense with Ruby’s “unless”</h3>
+
+<p>Some rules of thumb when using unless:</p>
+
+<ul>
+<li>Avoid using more than a single logical condition. <code>unless foo?</code> is fine. <code>unless foo? &amp;&amp; bar?</code> is harder to parse.</li>
+  <li>Avoid negation. “Unless” is already negative. Piling more on only makes it worse.</li>
+  <li>Never, ever, ever use an <code>else</code> clause with an <code>unless</code> statement.</li>
+</ul><h5 id="good-example">Good example</h5>
+
+<pre><code>i += 1 unless i &gt; 10
+
+unless person.present?
+  puts "There's no such person" 
+end
+</code></pre>
+
+<h5 id="bad-example">Bad example</h5>
+
+<pre><code>unless !person.present? &amp;&amp; !company.present?
+  puts "do you even know what you're doing?" 
+else
+  puts "and now we're really confused" 
+end
+</code></pre>
+
+<p><em>Inspired by <a href="http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless">37signals</a></em>.</p>
+
+<h2 id="blocks">Blocks</h2>
+
+<h3 id="blocks-versus-do--end-blocks">{ … } blocks versus do … end blocks</h3>
+
+<p>There are two prevailing conventions on when to use curly braces for blocks versus the do … end keywords:</p>
+
+<ul>
+<li>You MUST use curly braces for one-line blocks, use do … end for multi-line blocks</li>
+  <li>You MUST use curly braces when the return value is desired (or chained), use `do … end when the side-effect is desired</li>
+</ul><p>The latter convention seems to be gaining in popularity, but there does not seem to be consensus on this issue at the time of this writing.</p>
+
+<p>Note: The two block notations have different precedence, so they are not always interchangeable unless parentheses are used.</p>
+
+<pre><code>class Post &lt; ActiveRecord::Base
+
+  # The following statement raises a compile error
+  scope :search_for, lambda { |query|
+    where("1 == 1")
+  }
+
+  # The following statement works
+  scope :search_for, lambda { |query|
+    where("1 == 1")
+  }
+
+end
+</code></pre>
+
+<h2 id="methods">Methods</h2>
+
+<h3 id="method-definition">Method Definition</h3>
+
+<p>Methods MUST be named according to <a href="/naming/">naming conventions</a>.</p>
+
+<p>Method definition MUST always include parenthesis when the method has one or more parameters. Avoid parenthesis when the method definition has zero parameters.</p>
+
+<pre><code>def method_with_zero_parameters
+end
+
+def method_with_one_parameter(param1)
+end
+
+def method_with_many_parameters(param1, param2, param3)
+end
+</code></pre>
+
+<p>Never leave a space between the end of the method name and an open parenthesis, and between the parameter and a parenthesis. Butt the parameter list up tight against the name of the method.</p>
+
+<pre><code># good
+def method(param1, param2, param3)
+end
+
+# bad
+def method (param1, param2, param3)
+end
+
+# bad
+def method( param1, param2, param3 )
+end
+</code></pre>
+
+<p>Parameters MUST be separated by a single trailing space after the comma delimiter.</p>
+
+<pre><code># good
+def method(param1, param2, param3)
+end
+
+# bad
+def method(param1,param2,param3)
+end
+
+# bad
+def method(param1,param2,   options)
+end
+</code></pre>
+
+<h3 id="method-invocation">Method Invocation</h3>
+
+<p>Don’t put spaces between a method name and its parameter list.</p>
+
+<p>Make the precedence rules clearer: never leave a space between the end of the method invocation and an open parenthesis. Butt the parameter list up tight against the name of the method.</p>
+
+<pre><code># parses visually the same way Ruby parses it
+Math.sqrt(2 + 2) * 3 
+</code></pre>
+
+<p>but</p>
+
+<pre><code># is confusing
+Math.sqrt (2 + 2) * 3
+</code></pre>
+
+<p>The same applies to method definition</p>
+
+<pre><code># good version
+def say(message = "hello")
+end
+
+# bad version
+def say (message = "hello")
+end
+
+# bad version
+def say( message = "hello" )
+end
+</code></pre>
+
+<p>Put parentheses around non-trivial parameter lists.</p>
+
+<p>If you have a method parameter that involves any degree of complexity or that starts with a parenthesized expression, put the whole parameter list in parentheses.</p>
+
+<p>This can be a cause of some pretty subtle bugs, so it’s worth getting into the habit of using parenthesized parameter lists. Apart from a few common idioms such as</p>
+
+<ul>
+<li><code>require "name"</code></li>
+  <li><code>attr :name</code></li>
+</ul><p>where parentheses would seem strange, it’s rarely a mistake to add them.</p>
+
+<p><em>Inspired by Dave Thomas on RubyGardens.org.</em></p>
+
+<h3 id="method-visibility">Method Visibility</h3>
+
+<p>#TODO</p>
+    </div>
+    <div id="sidebar" class="grid_3 prefix_1">
+      <h2><em>the</em> Rubyist</h2>
+
+<ul>
+  <li><a href="/">Index</a></li>
+  <li><a href="/editor/">Editor Conventions</a></li>
+  <li><a href="/naming/">Naming Conventions</a></li>
+  <li><a href="/style/">Coding Style</a></li>
+</ul>
+
+<h2>Documentation</h2>
+
+<ul>
+  <li><a href="/documentation/">Index</a></li>
+  <li><a href="/documentation/yardoc/">Yardoc</a></li>
+</ul>
+
+<h2>Rails</h2>
+
+<ul>
+  <li><a href="/rails/design/">Design Conventions</a></li>
+  <li><a href="/rails/i18n/">I18n</a></li>
+  <li><a href="/rails/documentation/">Documentation</a></li>
+  <li><a href="/rails/extensions/">Extensions</a></li>
+  <li><a href="/rails/models/">Models</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="footer" class="container_12 clearfix">
+    <div id="copy">
+      Copyright &copy; 2011 <a href="http://www.simonecarletti.com">Simone Carletti</a>
+    </div>
+  </div>
+
+</body>
+</html>

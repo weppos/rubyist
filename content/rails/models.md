@@ -1,3 +1,5 @@
+# Models
+
 ## Model Definition Order
 
     class Model
@@ -45,10 +47,12 @@
       end
 
       protected
+
         def protected_method
         end
 
       private
+
         def private_method
         end
 

@@ -1,4 +1,4 @@
-## Documentation
+# Documentation
 
 Rails code MUST be documented using [TomDoc][3].
 

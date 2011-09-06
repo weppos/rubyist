@@ -29,66 +29,24 @@
 
   <div id="content" class="container_12 clearfix">
     <div id="main" class="grid_8">
-      <h1 id="models">Models</h1>
+      <h1 id="documentation">Documentation</h1>
 
-<h2 id="model-definition-order">Model Definition Order</h2>
+<p>Ruby libraries intended to be distributed or packaged as Gem MUST be documented using <a href="http://yardoc.org/">YARD</a>.</p>
 
-<pre><code>class Model
+<p>YARD is a powerful Ruby documentation tool for generating API documentation from Ruby source code. While the base syntax is compatible with RDoc, YARD provides a set of <a href="http://rubydoc.info/docs/yard/file/docs/Tags.md#List_of_Available_Tags">Javadoc-inspired tags</a> the developer can use to enrich the documentation with details that cannot be extracted from the source code.</p>
 
-  # Module inclusions
-  extend  Module
-  include Module
+<p>Compared to RDoc, YARD is able to generate a more detailed API documentation. It also offers some very handy tools, such as <code>yard server --reload</code>, that generates and reloads the documentation on-the-fly.</p>
 
-  # Subclasses
-  class Error &lt; StandardError
-  end
+<h2 id="list-of-documentation-toolsformats">List of Documentation Tools/Formats</h2>
 
-  # Constants
-  CONSTANTS = nil
+<ul>
+<li><a href="http://rdoc.rubyforge.org/">RDoc</a></li>
+  <li><a href="http://yardoc.org/">YARD</a></li>
+  <li>
+    <p><a href="http://tomdoc.org/">TomDoc</a></p>
 
-  # Relationships
-  belongs_to  :model
-  has_one     :model
-  has_many    :models
-
-  # Attribute definition, visibility
-  attr_reader     :attribute
-  attr_accessor   :attribute
-  attr_accessible :attribute
-  attr_protected  :attribute
-
-  # Extensions
-  acts_as_list  :scope =&gt; :keyword
-
-  # Before/After filters
-  before_save   :method
-  before_create :method
-  before_update :method
-  after_update  :method
-
-  # Validations
-  validates :attribute, :presence =&gt; true
-
-  # Named scopes
-  named_scope   :one, lambda { }
-  named_scope   :two, :conditions =&gt; ""
-
-  # Business Logic
-  def public_method_a
-  end
-
-  protected
-
-    def protected_method
-    end
-
-  private
-
-    def private_method
-    end
-
-end
-</code></pre>
+  </li>
+</ul>
     </div>
     <div id="sidebar" class="grid_3 prefix_1">
       <h2><em>the</em> Rubyist</h2>

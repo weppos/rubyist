@@ -1,6 +1,6 @@
-## Extensions
+# Extensions
 
-##### WARNING:
+#### WARNING:
 
 Thought Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changin existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
 
@@ -9,7 +9,7 @@ If you decide to add a new method, make sure you are using an unique name. Other
 Be careful when you modify existing classes. Consider using [Inheritance][1] or [Composition][2].
 
 
-### Ruby, Rails & Gem extensions
+## Ruby, Rails & Gem extensions
 
 Sometimes you need to <strike>monkeypatch</strike> extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
 
@@ -61,7 +61,7 @@ Remember that Ruby extensions MUST be tested as any other method. Depending on y
         └── super_struct_spec.rb
 
 
-##### Considerations
+## Considerations
 
 The solution presented above attempts to respect the purpose of each Rails folder.
 

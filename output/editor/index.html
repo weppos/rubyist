@@ -29,66 +29,30 @@
 
   <div id="content" class="container_12 clearfix">
     <div id="main" class="grid_8">
-      <h1 id="models">Models</h1>
+      <h1 id="editor-conventions">Editor Conventions</h1>
 
-<h2 id="model-definition-order">Model Definition Order</h2>
+<h2 id="indentation">Indentation</h2>
 
-<pre><code>class Model
+<p>Indentation MUST consist of 2 spaces. Tabs are not allowed.</p>
 
-  # Module inclusions
-  extend  Module
-  include Module
+<p>Configure your editor to use Soft Tabs (replace tabs with spaces) or Spaces.
+The most part of IDE and editors support this feature.</p>
 
-  # Subclasses
-  class Error &lt; StandardError
-  end
+<h2 id="maximum-line-length">Maximum Line Length</h2>
 
-  # Constants
-  CONSTANTS = nil
+<p>The target line length SHOULD be 80 characters.</p>
 
-  # Relationships
-  belongs_to  :model
-  has_one     :model
-  has_many    :models
+<p>Developers SHOULD strive keep each line of their code under 80 characters where possible and practical. However, longer lines are acceptable in some circumstances.</p>
 
-  # Attribute definition, visibility
-  attr_reader     :attribute
-  attr_accessor   :attribute
-  attr_accessible :attribute
-  attr_protected  :attribute
+<h2 id="line-termination">Line Termination</h2>
 
-  # Extensions
-  acts_as_list  :scope =&gt; :keyword
+<p>Line termination follows the Unix text file convention. Lines MUST end with a single linefeed (LF) character. Linefeed characters are represented as ordinal 10, or hexadecimal 0x0A.</p>
 
-  # Before/After filters
-  before_save   :method
-  before_create :method
-  before_update :method
-  after_update  :method
+<p>Note: Do not use carriage returns (CR) as is the convention in Apple OS’s (0x0D) or the carriage return - linefeed combination (CRLF) as is standard for the Windows OS (0x0D, 0x0A).</p>
 
-  # Validations
-  validates :attribute, :presence =&gt; true
+<h2 id="whitespaces">Whitespaces</h2>
 
-  # Named scopes
-  named_scope   :one, lambda { }
-  named_scope   :two, :conditions =&gt; ""
-
-  # Business Logic
-  def public_method_a
-  end
-
-  protected
-
-    def protected_method
-    end
-
-  private
-
-    def private_method
-    end
-
-end
-</code></pre>
+<p>#TODO</p>
     </div>
     <div id="sidebar" class="grid_3 prefix_1">
       <h2><em>the</em> Rubyist</h2>

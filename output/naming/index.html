@@ -29,66 +29,52 @@
 
   <div id="content" class="container_12 clearfix">
     <div id="main" class="grid_8">
-      <h1 id="models">Models</h1>
+      <h1 id="naming-conventions">Naming Conventions</h1>
 
-<h2 id="model-definition-order">Model Definition Order</h2>
+<h2 id="constants">Constants</h2>
 
-<pre><code>class Model
+<p>Constants MUST use <code>UPPER_CASE</code>.</p>
 
-  # Module inclusions
-  extend  Module
-  include Module
+<pre><code>Math::PI
+OptionParser::REQUIRED_ARGUMENT
 
-  # Subclasses
-  class Error &lt; StandardError
-  end
-
-  # Constants
-  CONSTANTS = nil
-
-  # Relationships
-  belongs_to  :model
-  has_one     :model
-  has_many    :models
-
-  # Attribute definition, visibility
-  attr_reader     :attribute
-  attr_accessor   :attribute
-  attr_accessible :attribute
-  attr_protected  :attribute
-
-  # Extensions
-  acts_as_list  :scope =&gt; :keyword
-
-  # Before/After filters
-  before_save   :method
-  before_create :method
-  before_update :method
-  after_update  :method
-
-  # Validations
-  validates :attribute, :presence =&gt; true
-
-  # Named scopes
-  named_scope   :one, lambda { }
-  named_scope   :two, :conditions =&gt; ""
-
-  # Business Logic
-  def public_method_a
-  end
-
-  protected
-
-    def protected_method
-    end
-
-  private
-
-    def private_method
-    end
-
+class Curses
+  KEY_DOWN = nil
 end
 </code></pre>
+
+<h2 id="classes-and-modules">Classes and Modules</h2>
+
+<p>Classes MUST use <code>PascalCase</code>. Join words of class names by capitalizing the first letter of each word. The same goes for <code>ModuleNames</code> as well.</p>
+
+<pre><code>class MyClass
+end
+
+module MyModule
+end
+</code></pre>
+
+<h2 id="methods-and-variables">Methods and Variables</h2>
+
+<p>Methods MUST use <code>underscore</code>, as do <code>local_variables</code>, <code>@instance_variables</code>, and <code>@@class_variables</code>. Join words with underscores (aka <code>snake_case</code>).</p>
+
+<pre><code>class Greeter
+  @@hello = nil
+  @@hello_message = nil
+
+  def hello
+    @hello = nil
+  end
+
+  def say_hello
+    @say_hello = nil
+  end
+end
+</code></pre>
+
+<p>Keep acronyms in class names capitalized. <code>MyXMLClass</code>, not <code>MyXmlClass</code>. Variables should use all lower-case.</p>
+
+<hr><p>Warning: There is no place in Ruby where <code>camelCase</code> is ever used.</p>
     </div>
     <div id="sidebar" class="grid_3 prefix_1">
       <h2><em>the</em> Rubyist</h2>

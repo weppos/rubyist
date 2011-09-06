@@ -1,6 +1,6 @@
-## Design Conventions
+# Design Conventions
 
-### Layout & Page Namespace
+## Layout & Page Namespace
 
 Sometimes, CSS definitions apply to one page or all pages in a specific layout. The convention is to scope these definitions under the page namespace or layout namespace.
 
@@ -22,21 +22,6 @@ Likewise, use the page namespace to define page-wide classes.
       /* only for boxed */
     }
 
-##### How to change the @layout-NAME@ namespace
-
-Each layout should have its own layout namespace attached to the layout file itself.
-
-##### How to change the @page-NAME@ namespace
-
-Use the `pagid` Ruby helper at the top of your action file.
-For example, to assign the page namespace `page-account` to the `/accounts/index.html.erb` view file, place the following string at the top of the view file.
-
-    <% pagid "account" %>
-
-    ... here your HTML view
-
-##### Source Code
-
 Here's the code for the `pagid` helper.
 
     # Sets/Gets a page id for a view.
@@ -56,3 +41,16 @@ Here's the code for the `pagid` helper.
     def pagid(*args)
       (@_pagid ||= []).concat(args).compact.join(" ")
     end
+
+### How to change the @layout-NAME@ namespace
+
+Each layout should have its own layout namespace attached to the layout file itself.
+
+### How to change the @page-NAME@ namespace
+
+Use the `pagid` Ruby helper at the top of your action file.
+For example, to assign the page namespace `page-account` to the `/accounts/index.html.erb` view file, place the following string at the top of the view file.
+
+    <% pagid "account" %>
+
+    ... here your HTML view

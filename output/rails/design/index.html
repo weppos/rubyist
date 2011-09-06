@@ -29,9 +29,9 @@
 
   <div id="content" class="container_12 clearfix">
     <div id="main" class="grid_8">
-      <h2 id="design-conventions">Design Conventions</h2>
+      <h1 id="design-conventions">Design Conventions</h1>
 
-<h3 id="layout--page-namespace">Layout &amp; Page Namespace</h3>
+<h2 id="layout--page-namespace">Layout &amp; Page Namespace</h2>
 
 <p>Sometimes, CSS definitions apply to one page or all pages in a specific layout. The convention is to scope these definitions under the page namespace or layout namespace.</p>
 
@@ -56,22 +56,6 @@
 }
 </code></pre>
 
-<h5 id="how-to-change-the-layout-name-namespace">How to change the @layout-NAME@ namespace</h5>
-
-<p>Each layout should have its own layout namespace attached to the layout file itself.</p>
-
-<h5 id="how-to-change-the-page-name-namespace">How to change the @page-NAME@ namespace</h5>
-
-<p>Use the <code>pagid</code> Ruby helper at the top of your action file.
-For example, to assign the page namespace <code>page-account</code> to the <code>/accounts/index.html.erb</code> view file, place the following string at the top of the view file.</p>
-
-<pre><code>&lt;% pagid "account" %&gt;
-
-... here your HTML view
-</code></pre>
-
-<h5 id="source-code">Source Code</h5>
-
 <p>Here’s the code for the <code>pagid</code> helper.</p>
 
 <pre><code># Sets/Gets a page id for a view.
@@ -92,26 +76,46 @@ def pagid(*args)
   (@_pagid ||= []).concat(args).compact.join(" ")
 end
 </code></pre>
+
+<h3 id="how-to-change-the-layout-name-namespace">How to change the @layout-NAME@ namespace</h3>
+
+<p>Each layout should have its own layout namespace attached to the layout file itself.</p>
+
+<h3 id="how-to-change-the-page-name-namespace">How to change the @page-NAME@ namespace</h3>
+
+<p>Use the <code>pagid</code> Ruby helper at the top of your action file.
+For example, to assign the page namespace <code>page-account</code> to the <code>/accounts/index.html.erb</code> view file, place the following string at the top of the view file.</p>
+
+<pre><code>&lt;% pagid "account" %&gt;
+
+... here your HTML view
+</code></pre>
     </div>
     <div id="sidebar" class="grid_3 prefix_1">
-      <h2>Ruby</h2>
+      <h2><em>the</em> Rubyist</h2>
 
 <ul>
-  <li><a href="/ruby/editor/">Editor</a></li>
-  <li><a href="/ruby/naming/">Naming</a></li>
-  <li><a href="/ruby/style/">Naming</a></li>
-  <li><a href="/ruby/documentation/">Documentation</a></li>
-  <li><a href="/ruby/documentation/">Yardoc</a></li>
+  <li><a href="/">Index</a></li>
+  <li><a href="/editor/">Editor Conventions</a></li>
+  <li><a href="/naming/">Naming Conventions</a></li>
+  <li><a href="/style/">Coding Style</a></li>
+</ul>
+
+<h2>Documentation</h2>
+
+<ul>
+  <li><a href="/documentation/">Index</a></li>
+  <li><a href="/documentation/yardoc/">Yardoc</a></li>
 </ul>
 
 <h2>Rails</h2>
 
 <ul>
-  <li><a href="/rails/design/">Design</a></li>
+  <li><a href="/rails/design/">Design Conventions</a></li>
   <li><a href="/rails/i18n/">I18n</a></li>
-  <li><a href="/rails/style/">Style</a></li>
   <li><a href="/rails/documentation/">Documentation</a></li>
   <li><a href="/rails/extensions/">Extensions</a></li>
+  <li><a href="/rails/models/">Models</a></li>
 </ul>
 
     </div>
