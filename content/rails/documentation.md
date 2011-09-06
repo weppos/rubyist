@@ -4,7 +4,7 @@ title: Documentation / Rails
 
 # Rails Documentation
 
-Rails code SHOULD be documented using [TomDoc][3].
+Rails code SHOULD be documented using [TomDoc](http://tomdoc.org/).
 
 TomDoc is a code documentation specification that helps you write precise documentation that is nice to read in plain text, yet structured enough to be automatically extracted and processed by a machine.
 
