@@ -1,8 +1,8 @@
 ---
-title: About
+title: Preface
 ---
 
-# About
+# Preface
 
 ## Disclaimer
 
