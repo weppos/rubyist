@@ -48,9 +48,9 @@ Note: The two block notations have different precedence, so they are not always 
     class Post < ActiveRecord::Base
 
       # The following statement raises a compile error
-      scope :search_for, lambda { |query|
+      scope :search_for, lambda do |query|
         where("1 == 1")
-      }
+      end
 
       # The following statement works
       scope :search_for, lambda { |query|
