@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- docss -->
+  <link rel="stylesheet" href="/static/shared/css/all.css" type="text/css" media="screen" />
+  <!-- custom -->
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+
+  
+</head>
+
+<body>
+
+  <div id="header" class="container_12 clearfix">
+    <div id="logo" class="grid_6">
+      <a href="/"><em>The</em> Rubyist</a>
+    </div>
+    <div id="menu" class="grid_6">
+      <ul id="nav" class="clearfix">
+      </ul>
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="content" class="container_12 clearfix">
+    <div id="main" class="grid_8">
+      <h2 id="i18n">I18n</h2>
+
+<h3 id="yaml-file-structure">YAML File Structure</h3>
+
+<pre><code>LANGUAGE:
+
+  # The `app` node contains keys related to the main application.
+  app:
+    site_name: ...
+    site_description: ...
+    site_headline: ...
+
+
+  # The `flash` node contains all flash message keys,
+  # regardless the flash type.
+  #
+  # Tip: avoid prefixing flash keys with the type of the flash
+  # because the same message can be reused in different flash types.
+  # Also, you might want to change the flash level in the future.
+  flash:
+    article_created: "The article has been successfully created."
+    article_updated: "The article has been successfully updated."
+    bookmark_created: "The bookmark has been successfully created."
+    ...
+
+
+  # The `text` node contains shared keys.
+  text:
+
+    # Action keys are prefixed with `action_`.
+    #
+    #   &lt;a href="#"&gt;&lt;%= t("text.action_edit") %&gt;&lt;/a&gt; or
+    #   &lt;a href="#"&gt;&lt;%= t("text.action_cancel") %&gt;&lt;/a&gt;
+    #
+    action_edit: "edit"
+    action_cancel: "cancel"
+
+    # Button keys are prefixed with `action_`.
+    #
+    #   &lt;%= submit_tag t("text.button_login") %&gt; or
+    #   &lt;a href="#"&gt;&lt;%= t("text.action_cancel") %&gt;&lt;/a&gt;
+    #
+    button_login: "Login"
+    button_search: "Search"
+
+    # h1, h2, h3 keys are prefixed with `header_`.
+    #
+    #   &lt;h1&gt;&lt;%= t("text.header_admin_settings") %&gt;&lt;/h1&gt;
+    #
+    header_admin_settings: "Admin Settings"
+    header_content: "Content"
+
+    # Short messages are prefixed with `message_`.
+    #
+    # &lt;% if @users.empty? %&gt;
+    #   &lt;%= message_users_empty %&gt;
+    # &lt;% else %&gt;
+    #   ...
+    # &lt;% end %&gt;
+    #
+    message_users_empty: "There are no users."
+    message_required_user: "You must be logged to perform this action."
+
+    # Use the placeholder `foo` to refernce a variable.
+    suggested_by_foo: "Suggested by {{username}}"
+    published_by_foo: "Published by {{username}}"
+    foo_ago: "{{time}} ago"
+
+    # Use the schema `x_string` to define a key which interpolates a counter.
+    x_comments:
+      one:  "1 comment"
+      other: "{{count}} comments"
+    last_x_users:
+      one:  "Last 1 comment"
+      other: "Last {{count}} comments"
+
+
+  # The ActionMailer keys follows the same ActionController conventions.
+  #
+  # - The main node is the name of the ActionMailer class.
+  # - It contains one node for each email action.
+  #
+  # == Requirements
+  #
+  # ACTION required keys:
+  #
+  # subject - The subject of the email.
+  #
+  # == Example
+  #
+  # user_mailer:
+  #   notification:
+  #     subject: "[{{project}}] New Contact Message"
+  #   welcome_message:
+  #     subject: "Welcome to {{project}}!"
+  #
+  MAILER:
+    ACTION:
+      subject: "[{{project}}] New Contact Message"
+      ...
+    ACTION:
+      subject: "Welcome to {{project}}!"
+      ...
+
+
+  # The ActionController keys follows Rails convention to have one main node
+  # corresponding to the controller name, including several nodes,
+  # one for each controller action.
+  #
+  # Following this convention will allow you to use the shortcut
+  #
+  #   t(".meta_description")
+  #
+  # instead of
+  #
+  #   t("users_controller.index.meta_description")
+  #
+  # == Requirements
+  #
+  # ACTION required keys:
+  #
+  # title - The content of the &lt;title&gt; tag
+  # meta_description - The content of the meta description tag.
+  #
+  # == Example
+  #
+  # users_controller:
+  #   index:
+  #     ...
+  #   show:
+  #     ...
+  #
+  CONTROLLER:
+    ACTION:
+      title: ...
+      meta_description: ...
+    ACTION:
+      title: ...
+      meta_description: ...
+</code></pre>
+    </div>
+    <div id="sidebar" class="grid_3 prefix_1">
+      <h2>Ruby</h2>
+
+<ul>
+  <li><a href="/ruby/editor/">Editor</a></li>
+  <li><a href="/ruby/naming/">Naming</a></li>
+  <li><a href="/ruby/style/">Naming</a></li>
+  <li><a href="/ruby/documentation/">Documentation</a></li>
+  <li><a href="/ruby/documentation/">Yardoc</a></li>
+</ul>
+
+<h2>Rails</h2>
+
+<ul>
+  <li><a href="/rails/design/">Design</a></li>
+  <li><a href="/rails/i18n/">I18n</a></li>
+  <li><a href="/rails/style/">Style</a></li>
+  <li><a href="/rails/documentation/">Documentation</a></li>
+  <li><a href="/rails/extensions/">Extensions</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="footer" class="container_12 clearfix">
+    <div id="copy">
+      Copyright &copy; 2011 <a href="http://www.simonecarletti.com">Simone Carletti</a>
+    </div>
+  </div>
+
+</body>
+</html>

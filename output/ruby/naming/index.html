@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- docss -->
+  <link rel="stylesheet" href="/static/shared/css/all.css" type="text/css" media="screen" />
+  <!-- custom -->
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+
+  
+</head>
+
+<body>
+
+  <div id="header" class="container_12 clearfix">
+    <div id="logo" class="grid_6">
+      <a href="/"><em>The</em> Rubyist</a>
+    </div>
+    <div id="menu" class="grid_6">
+      <ul id="nav" class="clearfix">
+      </ul>
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="content" class="container_12 clearfix">
+    <div id="main" class="grid_8">
+      <h2 id="naming-conventions">Naming Conventions</h2>
+
+<h3 id="constants">Constants</h3>
+
+<p>Constants MUST use <code>UPPER_CASE</code>.</p>
+
+<pre><code>Math::PI
+OptionParser::REQUIRED_ARGUMENT
+
+class Curses
+  KEY_DOWN = nil
+end
+</code></pre>
+
+<h3 id="classes-and-modules">Classes and Modules</h3>
+
+<p>Classes MUST use <code>PascalCase</code>. Join words of class names by capitalizing the first letter of each word. The same goes for <code>ModuleNames</code> as well.</p>
+
+<pre><code>class MyClass
+end
+
+module MyModule
+end
+</code></pre>
+
+<h3 id="methods-and-variables">Methods and Variables</h3>
+
+<p>Methods MUST use <code>underscore</code>, as do <code>local_variables</code>, <code>@instance_variables</code>, and <code>@@class_variables</code>. Join words with underscores (aka <code>snake_case</code>).</p>
+
+<pre><code>class Greeter
+  @@hello = nil
+  @@hello_message = nil
+
+  def hello
+    @hello = nil
+  end
+
+  def say_hello
+    @say_hello = nil
+  end
+end
+</code></pre>
+
+<p>Keep acronyms in class names capitalized. <code>MyXMLClass</code>, not <code>MyXmlClass</code>. Variables should use all lower-case.</p>
+
+<hr><p>Warning: There is no place in Ruby where <code>camelCase</code> is ever used.</p>
+    </div>
+    <div id="sidebar" class="grid_3 prefix_1">
+      <h2>Ruby</h2>
+
+<ul>
+  <li><a href="/ruby/editor/">Editor</a></li>
+  <li><a href="/ruby/naming/">Naming</a></li>
+  <li><a href="/ruby/style/">Naming</a></li>
+  <li><a href="/ruby/documentation/">Documentation</a></li>
+  <li><a href="/ruby/documentation/">Yardoc</a></li>
+</ul>
+
+<h2>Rails</h2>
+
+<ul>
+  <li><a href="/rails/design/">Design</a></li>
+  <li><a href="/rails/i18n/">I18n</a></li>
+  <li><a href="/rails/style/">Style</a></li>
+  <li><a href="/rails/documentation/">Documentation</a></li>
+  <li><a href="/rails/extensions/">Extensions</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="footer" class="container_12 clearfix">
+    <div id="copy">
+      Copyright &copy; 2011 <a href="http://www.simonecarletti.com">Simone Carletti</a>
+    </div>
+  </div>
+
+</body>
+</html>

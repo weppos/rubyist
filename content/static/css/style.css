@@ -1,0 +1,13 @@
+/* -------------------------------
+              GLOBAL
+------------------------------- */
+
+body {
+  font-size: 12px;
+}
+
+
+/* reset margin-top if under main */
+#main > h1 {
+  margin-top: 0;
+}

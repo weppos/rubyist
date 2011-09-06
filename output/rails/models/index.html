@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- docss -->
+  <link rel="stylesheet" href="/static/shared/css/all.css" type="text/css" media="screen" />
+  <!-- custom -->
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+
+  
+</head>
+
+<body>
+
+  <div id="header" class="container_12 clearfix">
+    <div id="logo" class="grid_6">
+      <a href="/"><em>The</em> Rubyist</a>
+    </div>
+    <div id="menu" class="grid_6">
+      <ul id="nav" class="clearfix">
+      </ul>
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="content" class="container_12 clearfix">
+    <div id="main" class="grid_8">
+      <h2 id="model-definition-order">Model Definition Order</h2>
+
+<pre><code>class Model
+
+  # Module inclusions
+  extend  Module
+  include Module
+
+  # Subclasses
+  class Error &lt; StandardError
+  end
+
+  # Constants
+  CONSTANTS = nil
+
+  # Relationships
+  belongs_to  :model
+  has_one     :model
+  has_many    :models
+
+  # Attribute definition, visibility
+  attr_reader     :attribute
+  attr_accessor   :attribute
+  attr_accessible :attribute
+  attr_protected  :attribute
+
+  # Extensions
+  acts_as_list  :scope =&gt; :keyword
+
+  # Before/After filters
+  before_save   :method
+  before_create :method
+  before_update :method
+  after_update  :method
+
+  # Validations
+  validates :attribute, :presence =&gt; true
+
+  # Named scopes
+  named_scope   :one, lambda { }
+  named_scope   :two, :conditions =&gt; ""
+
+  # Business Logic
+  def public_method_a
+  end
+
+  protected
+    def protected_method
+    end
+
+  private
+    def private_method
+    end
+
+end
+</code></pre>
+    </div>
+    <div id="sidebar" class="grid_3 prefix_1">
+      <h2>Ruby</h2>
+
+<ul>
+  <li><a href="/ruby/editor/">Editor</a></li>
+  <li><a href="/ruby/naming/">Naming</a></li>
+  <li><a href="/ruby/style/">Naming</a></li>
+  <li><a href="/ruby/documentation/">Documentation</a></li>
+  <li><a href="/ruby/documentation/">Yardoc</a></li>
+</ul>
+
+<h2>Rails</h2>
+
+<ul>
+  <li><a href="/rails/design/">Design</a></li>
+  <li><a href="/rails/i18n/">I18n</a></li>
+  <li><a href="/rails/style/">Style</a></li>
+  <li><a href="/rails/documentation/">Documentation</a></li>
+  <li><a href="/rails/extensions/">Extensions</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="footer" class="container_12 clearfix">
+    <div id="copy">
+      Copyright &copy; 2011 <a href="http://www.simonecarletti.com">Simone Carletti</a>
+    </div>
+  </div>
+
+</body>
+</html>

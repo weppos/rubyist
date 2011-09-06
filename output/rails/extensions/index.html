@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <!-- docss -->
+  <link rel="stylesheet" href="/static/shared/css/all.css" type="text/css" media="screen" />
+  <!-- custom -->
+  <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen" />
+
+  
+</head>
+
+<body>
+
+  <div id="header" class="container_12 clearfix">
+    <div id="logo" class="grid_6">
+      <a href="/"><em>The</em> Rubyist</a>
+    </div>
+    <div id="menu" class="grid_6">
+      <ul id="nav" class="clearfix">
+      </ul>
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="content" class="container_12 clearfix">
+    <div id="main" class="grid_8">
+      <h2 id="extensions">Extensions</h2>
+
+<h5 id="warning">WARNING:</h5>
+
+<p>Thought Ruby allows you to reopen classes, you shouldn’t abuse that feature. In particular, avoid changin existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.</p>
+
+<p>If you decide to add a new method, make sure you are using an unique name. Otherwise, if you are using a Gem which defines a method with the same name, something might not work as expected.</p>
+
+<p>Be careful when you modify existing classes. Consider using <a href="http://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)">Inheritance</a> or <a href="http://en.wikipedia.org/wiki/Object_composition">Composition</a>.</p>
+
+<h3 id="ruby-rails--gem-extensions">Ruby, Rails &amp; Gem extensions</h3>
+
+<p>Sometimes you need to <strike>monkeypatch</strike> extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.</p>
+
+<p>The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your <strike>hack</strike> customization even less elegant.</p>
+
+<p>The following convention solves the problem attempting to respect the purpose of each Rails folder.</p>
+
+<p>Create an initializer with the following content and save it in the <code>/config/initializers/</code> folder. The file name MUST be <code>_extruby.rb</code> The name SHOULD be prefixed with a <code>_</code>, in this way Rails will load this file before all the other initializers in the same folder.</p>
+
+<pre><code>Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| require f }
+</code></pre>
+
+<p>Create the folder <code>/lib/extruby</code> which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the <code>_</code>. To better organize the files, you SHOULD organize the extensions according to the following folder structure:</p>
+
+<p># TODO: explain structure</p>
+
+<pre><code>lib/extruby/
+├── active_record
+│   └── sqllike.rb
+├── mail
+│   ├── address.rb
+│   └── clone.rb
+├── money
+│   └── money-rails.rb
+├── postageapp
+│   └── actionmailer.rb
+├── public_suffix_service
+│   └── domain.rb
+├── ruby
+│   └── core
+│       ├── object_delayed_job.rb
+│       └── object_yielding.rb
+└── whois
+    ├── elabtime.rb
+    └── super_struct.rb
+</code></pre>
+
+<p>Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (<code>Test::Unit</code>, <code>Shoulda</code>) you SHOULD create a corresponding test suite for any customization.</p>
+
+<p># TODO: update structure</p>
+
+<pre><code>spec/lib/extruby/
+├── mail
+│   └── address_spec.rb
+├── money
+│   └── rails_spec.rb
+├── ruby
+│   └── core
+│       └── object_yielding_spec.rb
+└── whois
+    └── super_struct_spec.rb
+</code></pre>
+
+<h5 id="considerations">Considerations</h5>
+
+<p>The solution presented above attempts to respect the purpose of each Rails folder.</p>
+
+<ol>
+<li>It uses an initializer, so that the extensions are loaded when the Rails framework is loaded. However, the extensions are not stored in the initializers folder to avoid cluttering the namespace.</li>
+  <li>It prefixes the initializer with _ causing the initializer to be loaded before any initializer, making the extensions available as soon as possible.</li>
+  <li>It uses a dedicated folder in the <code>lib</code> folder to store all the <em>library</em> extensions.</li>
+</ol>
+    </div>
+    <div id="sidebar" class="grid_3 prefix_1">
+      <h2>Ruby</h2>
+
+<ul>
+  <li><a href="/ruby/editor/">Editor</a></li>
+  <li><a href="/ruby/naming/">Naming</a></li>
+  <li><a href="/ruby/style/">Naming</a></li>
+  <li><a href="/ruby/documentation/">Documentation</a></li>
+  <li><a href="/ruby/documentation/">Yardoc</a></li>
+</ul>
+
+<h2>Rails</h2>
+
+<ul>
+  <li><a href="/rails/design/">Design</a></li>
+  <li><a href="/rails/i18n/">I18n</a></li>
+  <li><a href="/rails/style/">Style</a></li>
+  <li><a href="/rails/documentation/">Documentation</a></li>
+  <li><a href="/rails/extensions/">Extensions</a></li>
+</ul>
+
+    </div>
+  </div>
+
+  <hr class="single separator_12" />
+
+  <div id="footer" class="container_12 clearfix">
+    <div id="copy">
+      Copyright &copy; 2011 <a href="http://www.simonecarletti.com">Simone Carletti</a>
+    </div>
+  </div>
+
+</body>
+</html>
