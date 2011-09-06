@@ -4,7 +4,7 @@ title: Extensions / Rails
 
 # Rails Extensions
 
-#### WARNING:
+## Warning
 
 Thought Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changing existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
 
