@@ -7,7 +7,7 @@ title: Coding Style
 
 ## Operators
 
-### Making sense with Ruby's "unless" 
+### Making sense with Ruby's "unless" [^1]
 
 Some rules of thumb when using unless:
 
@@ -30,8 +30,6 @@ Some rules of thumb when using unless:
     else
       puts "and now we're really confused" 
     end
-
-_Inspired by [37signals][1]_.
 
 
 ## Blocks
@@ -108,7 +106,7 @@ Parameters MUST be separated by a single trailing space after the comma delimite
     end
 
 
-### Method Invocation
+### Method Invocation [^2]
 
 Don't put spaces between a method name and its parameter list.
 
@@ -147,12 +145,10 @@ This can be a cause of some pretty subtle bugs, so it's worth getting into the h
 
 where parentheses would seem strange, it's rarely a mistake to add them.
 
-_Inspired by Dave Thomas on RubyGardens.org._
-
 
 ### Method Visibility
 
  #TODO
 
-
-  [1]: http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless
+[^1]: Inspired by [37signals](http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless).
+[^2]: Inspired by Dave Thomas on RubyGardens.org.
