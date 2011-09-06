@@ -145,10 +145,5 @@ This can be a cause of some pretty subtle bugs, so it's worth getting into the h
 
 where parentheses would seem strange, it's rarely a mistake to add them.
 
-
-### Method Visibility
-
- #TODO
-
 [^1]: Inspired by [37signals](http://37signals.com/svn/posts/2699-making-sense-with-rubys-unless).
 [^2]: Inspired by Dave Thomas on RubyGardens.org.
