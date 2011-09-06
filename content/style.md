@@ -40,8 +40,8 @@ _Inspired by [37signals][1]_.
 
 There are two prevailing conventions on when to use curly braces for blocks versus the do ... end keywords:
 
-* You MUST use curly braces for one-line blocks, use do ... end for multi-line blocks
-* You MUST use curly braces when the return value is desired (or chained), use `do ... end when the side-effect is desired
+* You SHOULD use curly braces for one-line blocks, use do ... end for multi-line blocks
+* You SHOULD use curly braces when the return value is desired (or chained), use `do ... end when the side-effect is desired
 
 The latter convention seems to be gaining in popularity, but there does not seem to be consensus on this issue at the time of this writing.
 
@@ -68,7 +68,7 @@ Note: The two block notations have different precedence, so they are not always 
 
 Methods MUST be named according to [naming conventions](/naming/).
 
-Method definition MUST always include parenthesis when the method has one or more parameters. Avoid parenthesis when the method definition has zero parameters.
+Method definition MUST always include parenthesis when the method has one or more parameters. You MUST avoid parenthesis when the method definition has zero parameters.
 
     def method_with_zero_parameters
     end
