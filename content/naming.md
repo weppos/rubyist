@@ -45,6 +45,18 @@ Methods MUST use `underscore`, as do `local_variables`, `@instance_variables`, a
       end
     end
 
+Method and variable names should be long enough to convey meaning:
+
+    # good
+    def do_what_i_mean
+      # do it!
+    end
+
+    # bad
+    def dwim
+      # di!
+    end
+
 Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
 
 ---
