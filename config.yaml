@@ -61,4 +61,4 @@ watcher:
 deploy:
   default:
     options: [ '-Plrtvz', '--delete-after' ]
-    dst: "italia:~/rubyist.simonecarletti.com"
+    dst: "italia:~/rubyist.info"
