@@ -30,3 +30,16 @@ sup a[rel="footnote"] {
 .footnotes li {
   margin-top: 0.5em;
 }
+
+
+/* -----     footnotes    ----- */
+
+
+/* -----       module     ----- */
+
+
+#sidebar .module {
+  border-top: 1px solid #ddd;
+  padding-top: 0.5em;
+  margin-top: 2em;
+}
