@@ -47,11 +47,11 @@ Here's the code for the `pagid` helper.
       (@_pagid ||= []).concat(args).compact.join(" ")
     end
 
-### How to change the @layout-NAME@ namespace
+### How to change the `layout-NAME` namespace
 
 Each layout should have its own layout namespace attached to the layout file itself.
 
-### How to change the @page-NAME@ namespace
+### How to change the `page-NAME` namespace
 
 Use the `pagid` Ruby helper at the top of your action file.
 For example, to assign the page namespace `page-account` to the `/accounts/index.html.erb` view file, place the following string at the top of the view file.
