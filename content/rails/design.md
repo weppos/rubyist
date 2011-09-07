@@ -27,24 +27,24 @@ Likewise, use the page namespace to define page-wide classes.
       /* only for boxed */
     }
 
-Here's the code for the `pagid` helper.
+Here's the code for the `page_id` helper.
 
     # Sets/Gets a page id for a view.
     #
     # If called with an argument, appends the argument to the existing page id.
     #
-    #   pagid "page-users"
+    #   page_id "page-users"
     #   # => "page-users"
-    #   pagid
+    #   page_id
     #   # => "page-users"
-    #   pagid "hidden"
+    #   page_id "hidden"
     #   # => "page-users hidden"
-    #   pagid
+    #   page_id
     #   # => "page-users hidden"
     #
     # Returns a String with the current page id.
-    def pagid(*args)
-      (@_pagid ||= []).concat(args).compact.join(" ")
+    def page_id(*args)
+      (@_page_id ||= []).concat(args).compact.join(" ")
     end
 
 ### How to change the `layout-NAME` namespace
@@ -53,9 +53,9 @@ Each layout should have its own layout namespace attached to the layout file its
 
 ### How to change the `page-NAME` namespace
 
-Use the `pagid` Ruby helper at the top of your action file.
+Use the `page_id` Ruby helper at the top of your action file.
 For example, to assign the page namespace `page-account` to the `/accounts/index.html.erb` view file, place the following string at the top of the view file.
 
-    <% pagid "page-account" %>
+    <% page_id "page-account" %>
 
-    ... here your HTML view
+      ... your HTML view goes here
