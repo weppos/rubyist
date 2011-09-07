@@ -6,7 +6,7 @@ title: Extensions / Rails
 
 ## Warning
 
-Thought Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changing existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
+Even though Ruby allows you to reopen classes, you shouldn't abuse that feature. In particular, avoid changing existing methods, especially in the Ruby core or standard library. If you change the behavior of a method, your application might now working properly.
 
 If you decide to add a new method, make sure you are using an unique name. Otherwise, if you are using a Gem which defines a method with the same name, something might not work as expected.
 
