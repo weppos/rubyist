@@ -13,7 +13,7 @@ In fact, the entire project is opinionable. But when you work in team you have t
 
 ## The Authors
 
-This project is the work of [Simone Carletti](http://www.simonecarletti.com/) and several team mates that contributed by reviewing my proposals and reject those that were just bizarre personal fixations.
+This project is the work of [Simone Carletti](http://www.simonecarletti.com/) and several teammates that contributed by reviewing my proposals and reject those that were just bizarre personal fixations.
 
 ## Contribute
 
