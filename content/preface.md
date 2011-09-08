@@ -23,6 +23,6 @@ Feel free to suggest your own coding conventions.
 
 ## Keywords
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in RFC 2119.
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
 Note that the force of these words is modified by the requirement level of the document in which they are used. These words hold their special meanings only when capitalized, and documents SHOULD avoid using these words uncapitalized in order to minimize confusion.
