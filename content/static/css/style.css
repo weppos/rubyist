@@ -12,6 +12,11 @@ body {
   margin-top: 0;
 }
 
+
+/* -------------------------------
+          MISCELLANEOUS
+------------------------------- */
+
 /* -----     footnotes    ----- */
 
 sup a[rel="footnote"] {
@@ -31,12 +36,35 @@ sup a[rel="footnote"] {
   margin-top: 0.5em;
 }
 
+/* -------------------------------
+              SIDEBAR
+------------------------------- */
 
-/* -----     footnotes    ----- */
+#sidebar h2 {
+  margin-top: 0.5em;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
+
+#sidebar ul li {
+  margin-left: 0;
+  list-style-type: none;
+}
+
+#sidebar ul li a {
+  padding: 3px 0;
+  border-bottom: 1px solid #f8f8f8;
+  display: block;
+  cursor: pointer;
+}
+
+#sidebar ul li a:hover {
+  background: #f8f8f8;
+  text-decoration: none;
+}
 
 
-/* -----       module     ----- */
-
+/* -----      module      ----- */
 
 #sidebar .module {
   border-top: 1px solid #ddd;
