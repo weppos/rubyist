@@ -17,7 +17,7 @@ Be careful when you modify existing classes. Consider using [Inheritance][1] or 
 
 Sometimes you need to <strike>monkeypatch</strike> extend a specific Rails library, a Ruby core class, or a Gem. The flexibility of Ruby allows you to reopen an existing class/module to add new methods or modify existing ones.
 
-The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your <strike>hack</strike> customization even less elegant.
+The most common question is: where should I write these extensions? In fact, there are several places where these files can be stored, however not all folders are loaded at the same time. Also, some folders are not loaded at all (unless you require them) making your customization even less elegant.
 
 The following convention solves the problem attempting to respect the purpose of each Rails folder.
 
@@ -27,8 +27,6 @@ Create an initializer with the following content and save it in the `/config/ini
 
 Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`. To better organize the files, you SHOULD organize the extensions according to the following folder structure:
 
- # TODO: explain structure
-
     lib/extruby/
     ├── active_record
     │   └── sqllike.rb
@@ -36,7 +34,7 @@ Create the folder `/lib/extruby` which will contain all the extensions. The name
     │   ├── address.rb
     │   └── clone.rb
     ├── money
-    │   └── money-rails.rb
+    │   └── rails.rb
     ├── postageapp
     │   └── actionmailer.rb
     ├── public_suffix_service
@@ -51,11 +49,10 @@ Create the folder `/lib/extruby` which will contain all the extensions. The name
 
 Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (`Test::Unit`, `Shoulda`) you SHOULD create a corresponding test suite for any customization.
 
- # TODO: update structure
-
     spec/lib/extruby/
     ├── mail
-    │   └── address_spec.rb
+    │   ├── address_spec.rb
+    │   └── clone_spec.rb
     ├── money
     │   └── rails_spec.rb
     ├── ruby
