@@ -21,11 +21,17 @@ The most common question is: where should I write these extensions? In fact, the
 
 The following convention solves the problem attempting to respect the purpose of each Rails folder.
 
+### Extension Folder
+
 Create an initializer with the following content and save it in the `/config/initializers/` folder. The file name MUST be `_extruby.rb` The name SHOULD be prefixed with a `_`, in this way Rails will load this file before all the other initializers in the same folder.
 
-    Dir[File.expand_path("../../../lib/extruby/**/*.rb", __FILE__)].each { |f| require f }
+    Dir[Rails.root.join("lib/extruby/**/*.rb")].each { |f| require f }
 
-Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`. To better organize the files, you SHOULD organize the extensions according to the following folder structure:
+Create the folder `/lib/extruby` which will contain all the extensions. The name of the folder MUST match the name of the initializer, without the `_`.
+
+You SHOULD organize the extensions in subfolders. Each subfolder SHOULD be named with the name of the library/gem to extend. The `ruby` directory is reserved for Ruby extensions: use `ruby/core` for core extensions and `ruby/stdlib` for Standard Library extensions.
+
+Your extension directory should look something like this:
 
     lib/extruby/
     ├── active_record
@@ -47,6 +53,8 @@ Create the folder `/lib/extruby` which will contain all the extensions. The name
         ├── elabtime.rb
         └── super_struct.rb
 
+### Test/Spec Folder
+
 Remember that Ruby extensions MUST be tested as any other method. Depending on your test framework (`Test::Unit`, `Shoulda`) you SHOULD create a corresponding test suite for any customization.
 
     spec/lib/extruby/
@@ -61,8 +69,7 @@ Remember that Ruby extensions MUST be tested as any other method. Depending on y
     └── whois
         └── super_struct_spec.rb
 
-
-## Considerations
+### Considerations
 
 The solution presented above attempts to respect the purpose of each Rails folder.
 
