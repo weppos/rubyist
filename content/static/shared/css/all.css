@@ -235,12 +235,12 @@ blockquote{margin:1em;padding:0 0 0 25px;color:#666;background:url(/images/layou
 #header #logo a,#header #logo a:hover{color:#111;text-decoration:none;}
 #header #logo a em,#header #logo a:hover em{color:#666;font-family:Georgia,"Bitstream Vera Serif",Times,serif;font-size:80%;margin-left:-5px;}
 #header #menu{text-align:right;font-family:"Helvetica Neue",Helvetica,Arial,"Liberation Sans",FreeSans,sans-serif;font-size:140%;font-variant:small-caps;text-transform:lowercase;}
-#header #menu ul{padding:2em 0 0 0;margin:0;list-style-type:none;}
+#header #menu ul{padding:2.5em 0 0 0;margin:0;list-style-type:none;}
 #header #menu ul li{display:inline;margin:0;padding:0 .75em 0 .5em;border-right:1px dotted #ddd;}
 #header+hr{margin:.75 auto 1.5em auto;}
 #content{margin:1.5em auto;font-size:125%;line-height:1.6;}
 #sidebar{font-size:90%;}
-#sidebar h2{font-size:110%;text-transform:uppercase;}
+#sidebar h2{font-size:110%;}
 #sidebar>h2,#sidebar>h3,#sidebar>h4{margin-top:.25em;}
 #sidebar h2 a:hover,#sidebar h3 a:hover,#sidebar h4 a:hover{color:#06a;text-decoration:none;}
 #prefooter{font-size:120%;}
