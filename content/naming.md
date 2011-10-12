@@ -59,6 +59,4 @@ Method and variable names SHOULD be long enough to convey meaning:
 
 Keep acronyms in class names capitalized. `MyXMLClass`, not `MyXmlClass`. Variables should use all lower-case.
 
----
-
-Warning: There is no place in Ruby where `camelCase` is ever used.
+Bear in mind that there is no place in Ruby where `camelCase` is ever used.
