@@ -20,9 +20,10 @@ body {
 /* -----     footnotes    ----- */
 
 sup a[rel="footnote"] {
-  font-size: 80%;
   margin-left: 2px;
   margin-right: 2px;
+  font-size: 75%;
+  font-weight: normal;
 }
 
 .footnotes {
