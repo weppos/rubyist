@@ -41,16 +41,16 @@ We employ the following conventions when a tag appears more than once in a docum
 
 * Multiple `@author` tags SHOULD be listed in chronological order, with the creator of the class/method listed at the top.
 * Multiple `@param` tags SHOULD be listed in argument-declaration order. This makes it easier to visually match the list to the declaration.
-* Multiple `@raise` tags SHOULD be listed alphabetically by the exception names.  
+* Multiple `@raise` tags SHOULD be listed alphabetically by the exception names.
 
-### Required Tags 
+### Required Tags
 
-A `@param` tag is REQUIRED (by convention) for every parameter. The description MAY be omitted if the meaning of the parameter is obvious.
+A `@param` tag is REQUIRED (by convention) for every parameter. The description MAY be omitted if the meaning of the parameter is obvious. Duck-typed parameters MUST be separated by a pipe character.
 
     # Opens a socket connection and returns the TCPSocket instance.
     #
     # @param  [String] host
-    # @param  [Integer] port
+    # @param  [Integer|String] port
     # @return [TCPSocket]
     def connect(host, port)
     end
